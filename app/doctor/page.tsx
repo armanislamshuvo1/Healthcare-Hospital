@@ -1,0 +1,276 @@
+import React from "react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Award,
+  BookOpen,
+  CheckCircle2,
+  Stethoscope,
+  PhoneCall,
+  Languages,
+  DollarSign,
+  User,
+  FileText,
+  HelpCircle,
+  ShieldCheck,
+} from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import { DOCTOR_PROFILE, HOSPITAL_INFO } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "Our Doctor | Dr. A.S.M. Rashedul Hasan (MBBS, FCPS Medicine)",
+  description:
+    "Meet Dr. A.S.M. Rashedul Hasan, Consultant Physician & Specialist in Internal Medicine at Healthcare Hospital Chattogram. View OPD consultation schedule and book appointments.",
+};
+
+export default function DoctorPage() {
+  const preparationTips = [
+    {
+      title: "Previous Prescriptions",
+      desc: "Bring all recent doctor prescriptions, hospital discharge summaries, or previous medical files.",
+    },
+    {
+      title: "Diagnostic Reports",
+      desc: "Carry your latest blood work, ECG, ultrasound, or imaging investigations conducted within the past 6 months.",
+    },
+    {
+      title: "Current Medication List",
+      desc: "Have a clear list of daily medications, insulin doses, or inhalers you are currently taking.",
+    },
+    {
+      title: "Arrive 15 Minutes Early",
+      desc: "Report to the OPD registration counter 15 minutes before your scheduled slot for vital sign pre-checks.",
+    },
+  ];
+
+  const faqs = [
+    {
+      q: "How do I book an OPD consultation serial?",
+      a: "You can book directly via our online Appointment form or call our chamber reception desk at 016*******. Serials are assigned chronologically to minimize chamber waiting times.",
+    },
+    {
+      q: "What is the follow-up consultation policy?",
+      a: "Follow-up visits within 14 days of an initial consultation are offered at a discounted fee of ৳ 500 for report evaluations and therapy adjustments.",
+    },
+    {
+      q: "What should I do in case of an acute medical emergency?",
+      a: "If a patient experiences severe chest pain, breathing difficulty, or unconsciousness, proceed directly to our 24/7 Emergency Ward. Emergency triage is conducted immediately on site.",
+    },
+  ];
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Page Header */}
+      <section className="bg-gradient-to-r from-slate-900 via-teal-950 to-slate-900 text-white py-14 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl space-y-4">
+            <Badge variant="teal" size="sm">
+              Lead Consultant Profile
+            </Badge>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+              {DOCTOR_PROFILE.name}
+            </h1>
+            <p className="text-base sm:text-lg text-slate-300">
+              {DOCTOR_PROFILE.designation} • {DOCTOR_PROFILE.specialty}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Profile & Credentials */}
+      <section className="py-14 sm:py-18 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {/* Left Column: Doctor Card / Avatar & Quick Actions */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-28 bg-slate-50 rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-6 shadow-sm">
+                <div className="text-center space-y-3">
+                  <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-3xl bg-teal-100 border-4 border-teal-200 mx-auto flex items-center justify-center text-teal-800 shadow-sm">
+                    <User className="w-16 h-16 text-teal-700" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-bold text-slate-900">
+                      {DOCTOR_PROFILE.name}
+                    </h2>
+                    <p className="text-xs font-semibold text-teal-700 mt-0.5">
+                      {DOCTOR_PROFILE.specialty}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-1.5 justify-center">
+                  {DOCTOR_PROFILE.degrees.map((deg) => (
+                    <Badge key={deg} variant="teal" size="sm">
+                      {deg}
+                    </Badge>
+                  ))}
+                </div>
+
+                <div className="border-t border-slate-200 pt-4 space-y-3 text-xs text-slate-700">
+                  <div className="flex items-center gap-2">
+                    <Award className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <span className="font-medium">{DOCTOR_PROFILE.experience}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Languages className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <span>Languages: {DOCTOR_PROFILE.languages.join(", ")}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <DollarSign className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <span>Fee: {DOCTOR_PROFILE.consultationFee}</span>
+                  </div>
+                </div>
+
+                <div className="pt-2 space-y-3">
+                  <Button
+                    href="/appointment"
+                    variant="primary"
+                    size="md"
+                    className="w-full justify-center shadow-xs"
+                  >
+                    <Calendar className="w-4 h-4" />
+                    <span>Book Appointment</span>
+                  </Button>
+                  <Button
+                    href={`tel:${HOSPITAL_INFO.dialPhone}`}
+                    variant="outline"
+                    size="md"
+                    className="w-full justify-center text-xs"
+                  >
+                    <PhoneCall className="w-4 h-4 text-teal-600" />
+                    <span>Call Chamber Desk</span>
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: In-depth Biography, Clinical Focus, Chamber Schedule */}
+            <div className="lg:col-span-2 space-y-8">
+              {/* Biography */}
+              <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-xs">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                  <Stethoscope className="w-5 h-5 text-teal-600" />
+                  Clinical Background & Overview
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {DOCTOR_PROFILE.about}
+                </p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Having served in top medical institutions including Chittagong Medical College & Hospital, Dr. Hasan brings diagnostic acumen, evidence-driven management, and a calm, patient-centric bedside manner.
+                </p>
+              </div>
+
+              {/* Consultation Chamber Schedule */}
+              <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-xs">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-teal-600" />
+                    Chamber Schedule & Availability
+                  </h3>
+                  <Badge variant="teal" dot size="sm">
+                    Accepting Patients
+                  </Badge>
+                </div>
+
+                <div className="divide-y divide-slate-100">
+                  {DOCTOR_PROFILE.schedule.map((item, index) => (
+                    <div key={index} className="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                      <div>
+                        <span className="font-bold text-slate-800 text-sm">{item.days}</span>
+                        <span className="text-xs text-slate-500 block">{item.room}</span>
+                      </div>
+                      <span className="inline-flex items-center px-3 py-1 rounded-lg bg-teal-50 text-teal-800 font-semibold text-xs border border-teal-200 self-start sm:self-auto">
+                        {item.time}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200 text-xs text-slate-600 flex items-start gap-2.5">
+                  <MapPin className="w-4 h-4 text-teal-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-semibold text-slate-800">Chamber Location: </span>
+                    106 E K.B. Fazlul Kader Rd, Chattogram. Patients are advised to arrive 15 minutes prior to appointment time.
+                  </div>
+                </div>
+              </div>
+
+              {/* Scope of Practice */}
+              <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-xs">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-teal-600" />
+                  Specialized Medical Conditions Treated
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs sm:text-sm text-slate-700">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <span>Diabetes & Endocrine Disorders</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <span>Hypertension & Cardiovascular Risk</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <span>Respiratory Infections & Asthma</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <span>Gastrointestinal & Liver Disorders</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <span>Infectious Diseases & Undiagnosed Fevers</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                    <span>Preventive Executive Health Checkups</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Consultation Preparation Checklist */}
+              <div className="bg-slate-50/70 rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-4">
+                <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-teal-600" />
+                  What to Bring to Your Consultation
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600">
+                  To ensure the most thorough and accurate diagnosis, please have the following items ready when visiting Chamber 201:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                  {preparationTips.map((tip) => (
+                    <div key={tip.title} className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs">
+                      <span className="font-bold text-xs text-slate-900 block mb-1">{tip.title}</span>
+                      <span className="text-xs text-slate-600 leading-relaxed">{tip.desc}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Consultation FAQs */}
+              <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-xs">
+                <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                  <HelpCircle className="w-5 h-5 text-teal-600" />
+                  Frequently Asked Questions
+                </h3>
+                <div className="space-y-4 pt-2">
+                  {faqs.map((faq, idx) => (
+                    <div key={idx} className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/80 space-y-1.5">
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-900">{faq.q}</h4>
+                      <p className="text-xs text-slate-600 leading-relaxed">{faq.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

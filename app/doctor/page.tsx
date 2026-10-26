@@ -16,15 +16,16 @@ import {
   FileText,
   HelpCircle,
   ShieldCheck,
+  Building2,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { DOCTOR_PROFILE, HOSPITAL_INFO } from "@/lib/constants";
+import { DOCTOR_PROFILE, HOSPITAL_INFO, MANAGEMENT_MEMBERS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Our Doctor | Dr. A.S.M. Rashedul Hasan (MBBS, FCPS Medicine)",
+  title: "Our Doctor & Team | Dr. A.S.M. Rashedul Hasan (MBBS, FCPS Medicine)",
   description:
-    "Meet Dr. A.S.M. Rashedul Hasan, Consultant Physician & Specialist in Internal Medicine at Healthcare Hospital Chattogram. View OPD consultation schedule and book appointments.",
+    "Meet Dr. A.S.M. Rashedul Hasan, Consultant (Medicine) at Healthcare Hospital Chattogram. View consultation schedule, fees, and hospital management leadership.",
 };
 
 export default function DoctorPage() {
@@ -69,13 +70,13 @@ export default function DoctorPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <Badge variant="teal" size="sm">
-              Lead Consultant Profile
+              Clinical Faculty & Governance
             </Badge>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-              {DOCTOR_PROFILE.name}
+              Our Doctor & Medical Leadership
             </h1>
             <p className="text-base sm:text-lg text-slate-300">
-              {DOCTOR_PROFILE.designation} • {DOCTOR_PROFILE.specialty}
+              Healthcare Hospital is spearheaded by senior Consultant Physician <span className="text-teal-300 font-semibold">{DOCTOR_PROFILE.name}</span> alongside distinguished clinical administrators.
             </p>
           </div>
         </div>
@@ -97,7 +98,7 @@ export default function DoctorPage() {
                       {DOCTOR_PROFILE.name}
                     </h2>
                     <p className="text-xs font-semibold text-teal-700 mt-0.5">
-                      {DOCTOR_PROFILE.specialty}
+                      {DOCTOR_PROFILE.designation}
                     </p>
                   </div>
                 </div>
@@ -160,7 +161,7 @@ export default function DoctorPage() {
                   {DOCTOR_PROFILE.about}
                 </p>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Having served in top medical institutions including Chittagong Medical College & Hospital, Dr. Hasan brings diagnostic acumen, evidence-driven management, and a calm, patient-centric bedside manner.
+                  As the primary consulting physician for Healthcare Hospital, Dr. Hasan specializes in accurate diagnosis, long-term chronic condition care, and coordinated inpatient admission when necessary.
                 </p>
               </div>
 
@@ -194,7 +195,7 @@ export default function DoctorPage() {
                   <MapPin className="w-4 h-4 text-teal-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="font-semibold text-slate-800">Chamber Location: </span>
-                    106 E K.B. Fazlul Kader Rd, Chattogram. Patients are advised to arrive 15 minutes prior to appointment time.
+                    106 E K.B. Fazlul Kader Rd, Chattogram 4203. Patients are advised to arrive 15 minutes prior to appointment time.
                   </div>
                 </div>
               </div>
@@ -224,11 +225,11 @@ export default function DoctorPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
-                    <span>Infectious Diseases & Undiagnosed Fevers</span>
+                    <span>Infectious Diseases & Fevers</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
-                    <span>Preventive Executive Health Checkups</span>
+                    <span>Preventive Health Assessments</span>
                   </div>
                 </div>
               </div>
@@ -268,6 +269,55 @@ export default function DoctorPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hospital Leadership & Clinical Administration Section */}
+      <section className="py-14 sm:py-16 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="max-w-2xl">
+            <Badge variant="teal" size="sm" className="mb-2">
+              Leadership & Governance
+            </Badge>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              Hospital Management & Clinical Leadership
+            </h3>
+            <p className="text-sm text-slate-600 mt-1">
+              Experienced medical administrators ensuring the highest ethical and operational standards.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {MANAGEMENT_MEMBERS.map((member) => (
+              <div
+                key={member.name}
+                className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 rounded-2xl bg-teal-50 border border-teal-200 text-teal-800 flex items-center justify-center font-bold text-lg">
+                      {member.name.includes("Dr.") ? <Stethoscope className="w-6 h-6 text-teal-700" /> : <Building2 className="w-6 h-6 text-teal-700" />}
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900">{member.name}</h4>
+                      <p className="text-xs font-semibold text-teal-700">{member.role}</p>
+                      <p className="text-xs text-slate-500 font-medium">{member.qualifications}</p>
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                    {member.bio}
+                  </p>
+                </div>
+
+                <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span className="text-slate-500">Governance Role</span>
+                  <Link href="/about" className="text-teal-700 font-semibold hover:underline">
+                    Read Leadership Profile →
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

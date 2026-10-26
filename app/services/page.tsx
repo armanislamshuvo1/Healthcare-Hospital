@@ -179,15 +179,26 @@ export default function ServicesPage() {
                           <span>Emergency Call: {HOSPITAL_INFO.displayPhone}</span>
                         </Button>
                       ) : (
-                        <Button
-                          href="/appointment"
-                          variant="primary"
-                          size="md"
-                          className="w-full justify-center shadow-xs"
-                        >
-                          <Calendar className="w-4 h-4" />
-                          <span>Book OPD Appointment</span>
-                        </Button>
+                        <>
+                          <Button
+                            href="/appointment"
+                            variant="primary"
+                            size="md"
+                            className="w-full justify-center shadow-xs"
+                          >
+                            <Calendar className="w-4 h-4" />
+                            <span>Book Consultation</span>
+                          </Button>
+                          <Button
+                            href={`tel:${HOSPITAL_INFO.dialPhone}`}
+                            variant="outline"
+                            size="md"
+                            className="w-full justify-center text-xs"
+                          >
+                            <PhoneCall className="w-3.5 h-3.5 text-teal-600" />
+                            <span>Call Chamber Desk ({HOSPITAL_INFO.displayPhone})</span>
+                          </Button>
+                        </>
                       )}
 
                       <Button

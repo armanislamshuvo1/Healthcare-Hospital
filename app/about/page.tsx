@@ -19,9 +19,9 @@ import { Badge } from "@/components/ui/Badge";
 import { HOSPITAL_INFO, MANAGEMENT_MEMBERS, DOCTOR_PROFILE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "About Us | Story & Management Leadership",
+  title: "About Us | Healthcare Hospital Chattogram",
   description:
-    "Learn about Healthcare Hospital Chattogram, our clinical mission, hospital leadership under Dr. Abdul Karim and Mr. Anwar Kamal, and our 1-consultant focus.",
+    "Learn about Healthcare Hospital Chattogram, our mission, values of Care, Compassion, Excellence, and leadership by Dr. Abdul Karim (MD) and Mr. Anwar Kamal.",
 };
 
 export default function AboutPage() {
@@ -61,7 +61,7 @@ export default function AboutPage() {
               About Healthcare Hospital
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              Dedicated to compassionate medicine, patient safety, and clinical excellence at 106 E K.B. Fazlul Kader Road, Chattogram.
+              Dedicated to compassionate medicine, patient safety, and clinical excellence at {HOSPITAL_INFO.fullAddress}.
             </p>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
                 Healthcare Hospital was founded in Chattogram to bring the disciplined standards, clean protocols, and patient-first ethos of leading tertiary hospitals into a personalized, accessible community facility.
               </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Rather than spreading focus across hundreds of rotating chambers, Healthcare Hospital concentrates on delivering deep, unhurried adult medicine care spearheaded by senior consultant <span className="font-semibold text-slate-900">{DOCTOR_PROFILE.name}</span>, complemented by a 24/7 emergency unit.
+                Rather than spreading focus across hundreds of rotating chambers, Healthcare Hospital concentrates on delivering deep, unhurried adult medicine care spearheaded by senior consultant <span className="font-semibold text-slate-900">{DOCTOR_PROFILE.name}</span>, complemented by a 24/7 emergency unit and a dedicated general medicine ward.
               </p>
 
               <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -118,8 +118,8 @@ export default function AboutPage() {
                   <span className="text-xs text-slate-600 font-medium mt-1 block">Emergency Ward</span>
                 </div>
                 <div className="p-4 bg-white rounded-2xl border border-slate-200/80 shadow-xs">
-                  <span className="block text-2xl sm:text-3xl font-extrabold text-teal-700">100%</span>
-                  <span className="text-xs text-slate-600 font-medium mt-1 block">Doctor-Led Triage</span>
+                  <span className="block text-2xl sm:text-3xl font-extrabold text-teal-700">1</span>
+                  <span className="text-xs text-slate-600 font-medium mt-1 block">General Medicine Ward</span>
                 </div>
                 <div className="p-4 bg-white rounded-2xl border border-slate-200/80 shadow-xs">
                   <span className="block text-2xl sm:text-3xl font-extrabold text-teal-700">1-on-1</span>
@@ -178,12 +178,12 @@ export default function AboutPage() {
       <section className="py-14 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <Badge variant="teal" size="sm" className="mb-2">Hospital Governance</Badge>
+            <Badge variant="teal" size="sm" className="mb-2">Hospital Management</Badge>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
               Hospital Leadership & Management
             </h2>
             <p className="text-sm text-slate-600 mt-2">
-              Guided by distinguished clinical administrators dedicated to maintaining healthcare excellence.
+              Meet our hospital management team overseeing governance, operations, and patient services.
             </p>
           </div>
 
@@ -194,7 +194,7 @@ export default function AboutPage() {
                 className="bg-slate-50/70 rounded-2xl border border-slate-200 p-7 sm:p-8 shadow-xs hover:bg-white hover:shadow-md transition-all duration-200"
               >
                 <div className="w-14 h-14 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center font-bold text-xl mb-5 border-2 border-teal-200">
-                  {member.name.split(" ")[1]?.charAt(0) || "M"}
+                  {member.name.includes("Dr.") ? <Stethoscope className="w-6 h-6 text-teal-700" /> : <Building2 className="w-6 h-6 text-teal-700" />}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">{member.name}</h3>
                 <p className="text-xs font-semibold text-teal-700 mt-0.5">{member.role}</p>
@@ -209,7 +209,7 @@ export default function AboutPage() {
           <div className="text-center mt-12">
             <Button href="/doctor" variant="primary" size="md">
               <Stethoscope className="w-4 h-4" />
-              <span>Meet Our Consultant Doctor</span>
+              <span>Meet Our Consultant Doctor (Dr. A.S.M. Rashedul Hasan)</span>
             </Button>
           </div>
         </div>

@@ -173,14 +173,61 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Attribution */}
+        {/* Embedded Google Map per Brief Lines 45 & Diagram */}
+        <div className="mt-10 pt-8 border-t border-slate-800">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div className="lg:col-span-5 space-y-2">
+              <h5 className="text-sm font-bold text-white flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-teal-400" />
+                <span>Hospital Map & Location</span>
+              </h5>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                106 E K.B. Fazlul Kader Rd, Chattogram 4203. Accessible from GEC Circle and Medical College Gate.
+              </p>
+              <div>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(HOSPITAL_INFO.fullAddress)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-teal-400 hover:text-teal-300 font-semibold underline"
+                >
+                  <span>Open in Google Maps (Get Directions)</span>
+                </a>
+              </div>
+            </div>
+            <div className="lg:col-span-7 h-40 sm:h-48 rounded-xl overflow-hidden border border-slate-700 bg-slate-800 shadow-sm">
+              <iframe
+                title="Healthcare Hospital Chattogram Map Footer"
+                src="https://maps.google.com/maps?q=106+E+K.B.+Fazlul+Kader+Rd,+Chattogram&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                className="border-0 w-full h-full"
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar: Copyright & Compliance */}
         <div className="mt-12 pt-8 border-t border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>
             © {new Date().getFullYear()} {HOSPITAL_INFO.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-1 text-slate-500">
-            <span>Built with care for Chattogram healthcare</span>
-            <Heart className="w-3.5 h-3.5 text-teal-500 fill-teal-500 inline mx-0.5" />
+          <div className="flex items-center gap-4 text-xs">
+            <Link href="/privacy-policy" className="text-slate-400 hover:text-teal-400 transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-slate-700">•</span>
+            <Link href="/admin" className="text-slate-500 hover:text-teal-400 transition-colors text-[11px]">
+              Staff Admin Portal
+            </Link>
+            <span className="text-slate-700">•</span>
+            <div className="flex items-center gap-1 text-slate-400">
+              <span>Chattogram Healthcare</span>
+              <Heart className="w-3.5 h-3.5 text-teal-500 fill-teal-500 inline mx-0.5" />
+            </div>
           </div>
         </div>
       </div>

@@ -31,8 +31,8 @@ describe("Layout & Clinical Content Verification Suite", () => {
       assert.match(constantsContent, /name:\s*["']Healthcare Hospital["']/);
     });
 
-    it("verifies hospital address is '106 E K.B. Fazlul Kader Rd, Chattogram'", () => {
-      assert.match(constantsContent, /fullAddress:\s*["']106 E K\.B\. Fazlul Kader Rd, Chattogram["']/);
+    it("verifies hospital address is '106 E K.B. Fazlul Kader Rd, Chattogram 4203, Bangladesh'", () => {
+      assert.match(constantsContent, /fullAddress:\s*["']106 E K\.B\. Fazlul Kader Rd, Chattogram 4203/);
     });
 
     it("verifies display phone format matches 016******* pattern", () => {
@@ -70,14 +70,15 @@ describe("Layout & Clinical Content Verification Suite", () => {
   });
 
   describe("Tier 1: Hospital Leadership & Core Values", () => {
-    it("verifies Dr. Abdul Karim is Medical Director & Chairman", () => {
+    it("verifies Dr. Abdul Karim is Managing Director with MBBS, CCD (BIRDEM)", () => {
       assert.match(constantsContent, /name:\s*["']Dr\. Abdul Karim["']/);
-      assert.match(constantsContent, /Medical Director & Chairman/);
+      assert.match(constantsContent, /Managing Director/);
+      assert.match(constantsContent, /MBBS, CCD \(BIRDEM\)/);
     });
 
-    it("verifies Mr. Anwar Kamal is Managing Director & Operations Head", () => {
+    it("verifies Mr. Anwar Kamal is Hospital Manager", () => {
       assert.match(constantsContent, /name:\s*["']Mr\. Anwar Kamal["']/);
-      assert.match(constantsContent, /Managing Director/);
+      assert.match(constantsContent, /Hospital Manager/);
     });
 
     it("verifies exactly 3 core values: Care, Compassion, Excellence", () => {
@@ -115,7 +116,7 @@ describe("Layout & Clinical Content Verification Suite", () => {
             // Expression like ${HOSPITAL_INFO.dialPhone}
             assert.match(
               target,
-              /\$\{(?:HOSPITAL_INFO\.(?:dialPhone|emergencyDialPhone)|phone)\}/,
+              /\$\{(?:HOSPITAL_INFO\.(?:dialPhone|emergencyDialPhone)|phone|req\.phoneNumber)\}/,
               `File ${path.basename(file)} interpolates unrecognized telephone variable: ${target}`
             );
           } else {

@@ -8,6 +8,7 @@ const testSuites = [
   { name: "Routes & Global App Shell Architecture Suite", file: "tests/routes-and-layout.test.mjs" },
   { name: "Appointment & Contact Forms Specification Suite", file: "tests/appointment-contact-forms.test.mjs" },
   { name: "E2E Scenarios & Cross-Feature Integration Suite", file: "tests/e2e-scenarios.test.mjs" },
+  { name: "Developer Brief Specifications Suite", file: "tests/brief-specifications.test.mjs" },
 ];
 
 console.log("===============================================================================");

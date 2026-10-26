@@ -114,10 +114,11 @@ describe("E2E Scenarios & Cross-Feature Integration Suite", () => {
       assert.match(homeContent, /href=["']\/appointment["']/);
       assert.match(homeContent, /Book.*Appointment/i);
 
-      // Verify "How to visit" 3-step strip is defined in authoritative data
+      // Verify "How to visit" 3-step strip is defined in authoritative data (Call -> Book -> Visit)
       assert.match(constantsContent, /HOW_TO_VISIT_STEPS/);
-      assert.match(constantsContent, /Request Appointment/);
-      assert.match(constantsContent, /Visit Our Hospital/);
+      assert.match(constantsContent, /title:\s*["']Call["']/);
+      assert.match(constantsContent, /title:\s*["']Book["']/);
+      assert.match(constantsContent, /title:\s*["']Visit["']/);
       assert.match(constantsContent, /106 E K\.B\. Fazlul Kader Rd/);
 
       assert.match(appointmentContent, /Saturday - Thursday/);
@@ -152,8 +153,8 @@ describe("E2E Scenarios & Cross-Feature Integration Suite", () => {
       assert.match(aboutContent, /MANAGEMENT_MEMBERS/);
       assert.match(constantsContent, /Dr\. Abdul Karim/);
       assert.match(constantsContent, /Mr\. Anwar Kamal/);
-      assert.match(constantsContent, /Medical Director & Chairman/);
-      assert.match(constantsContent, /Managing Director & Operations Head/);
+      assert.match(constantsContent, /Managing Director/);
+      assert.match(constantsContent, /Hospital Manager/);
 
       assert.match(aboutContent, /HOSPITAL_INFO\.establishedYear/);
       assert.match(aboutContent, /Excellence in Care in a Focused 1-Consultant Hospital/);

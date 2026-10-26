@@ -87,6 +87,8 @@ describe("Routes & Global App Shell Architecture Suite", () => {
       "components/layout/Navbar.tsx",
       "components/layout/MobileDrawer.tsx",
       "components/layout/FloatingCallButton.tsx",
+      "components/layout/NoticeStrip.tsx",
+      "components/home/HeroBanner.tsx",
       "components/ui/Modal.tsx",
       "components/appointment/AppointmentForm.tsx",
       "components/contact/ContactForm.tsx",

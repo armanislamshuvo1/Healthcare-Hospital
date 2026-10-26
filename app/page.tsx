@@ -6,6 +6,7 @@ import { HowToVisit } from "@/components/home/HowToVisit";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { DoctorSpotlight } from "@/components/home/DoctorSpotlight";
 import { EmergencyBanner } from "@/components/home/EmergencyBanner";
+import { HomeContactMap } from "@/components/home/HomeContactMap";
 import { DOCTOR_PROFILE } from "@/lib/constants";
 
 export default function HomePage() {
@@ -35,6 +36,9 @@ export default function HomePage() {
 
       {/* 24/7 Full-Width Emergency Call Banner */}
       <EmergencyBanner />
+
+      {/* Contact & Map Section per Brief Page-by-Page Table */}
+      <HomeContactMap />
     </div>
   );
 }

@@ -12,6 +12,8 @@ import {
   ChevronLeft,
   ChevronRight,
   ArrowRight,
+  Play,
+  Pause,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -19,7 +21,7 @@ import { HOSPITAL_INFO, HERO_SLIDES, DOCTOR_PROFILE } from "@/lib/constants";
 
 export function HeroBanner() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
@@ -30,20 +32,19 @@ export function HeroBanner() {
   };
 
   useEffect(() => {
-    if (isPaused) return;
+    if (!isAutoPlaying) return;
     const interval = setInterval(() => {
       nextSlide();
-    }, 6000);
+    }, 4500); // Auto rotates every 4.5 seconds
+
     return () => clearInterval(interval);
-  }, [isPaused, nextSlide]);
+  }, [isAutoPlaying, nextSlide, currentSlide]);
 
   const slide = HERO_SLIDES[currentSlide];
 
   return (
     <section
       className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-teal-950 text-white py-16 sm:py-24 overflow-hidden border-b border-slate-800"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       aria-roledescription="carousel"
       aria-label="Healthcare Hospital Services Overview"
     >
@@ -66,15 +67,19 @@ export function HeroBanner() {
               >
                 {slide.badge}
               </Badge>
+              <span className="text-[11px] font-mono text-teal-300/80 bg-teal-950/60 px-2 py-0.5 rounded border border-teal-800/60 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-ping inline-block" />
+                Auto-Rotating (4.5s)
+              </span>
             </div>
 
-            {/* Slide Headline & 1-line text */}
-            <div className="min-h-[140px] sm:min-h-[160px] flex flex-col justify-center">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight animate-in fade-in duration-300">
+            {/* Slide Headline & 1-line text with key transition */}
+            <div key={currentSlide} className="min-h-[140px] sm:min-h-[160px] flex flex-col justify-center animate-in fade-in duration-500 slide-in-from-right-2">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
                 {slide.headline}
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mt-4 animate-in fade-in duration-300">
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mt-4">
                 {slide.subtext}
               </p>
             </div>
@@ -115,7 +120,7 @@ export function HeroBanner() {
                     onClick={() => setCurrentSlide(idx)}
                     aria-label={`Go to slide ${idx + 1}`}
                     className={`h-2.5 rounded-full transition-all duration-300 ${
-                      currentSlide === idx ? "w-8 bg-teal-400" : "w-2.5 bg-slate-600 hover:bg-slate-400"
+                      currentSlide === idx ? "w-10 bg-teal-400" : "w-3 bg-slate-600 hover:bg-slate-400"
                     }`}
                   />
                 ))}
@@ -135,6 +140,14 @@ export function HeroBanner() {
                   className="p-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white transition-colors"
                 >
                   <ChevronRight className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setIsAutoPlaying((prev) => !prev)}
+                  aria-label={isAutoPlaying ? "Pause auto-rotation" : "Resume auto-rotation"}
+                  className="p-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white transition-colors ml-1"
+                  title={isAutoPlaying ? "Pause Auto-Rotation" : "Start Auto-Rotation"}
+                >
+                  {isAutoPlaying ? <Pause className="w-3.5 h-3.5 text-teal-400" /> : <Play className="w-3.5 h-3.5 text-slate-300" />}
                 </button>
                 <span className="text-xs text-slate-400 font-mono ml-2">
                   0{currentSlide + 1} / 0{HERO_SLIDES.length}

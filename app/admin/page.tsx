@@ -305,10 +305,10 @@ export default function AdminPage() {
             <div>
               <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
                 <Clock className="w-4 h-4 text-teal-600" />
-                Hospital Content & Schedule Management (Brief Line 91)
+                Hospital Content & Schedule Management
               </h2>
               <p className="text-xs text-slate-500 mt-0.5">
-                Edit Dr. Hasan&apos;s schedule, phone numbers, and fees without touching code.
+                Edit Dr. Hasan&apos;s schedule, phone numbers, and fees.
               </p>
             </div>
             {settingsSaved && (

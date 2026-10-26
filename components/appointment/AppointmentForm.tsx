@@ -446,7 +446,7 @@ export function AppointmentForm() {
 
           <div className="space-y-1.5">
             <label htmlFor="email" className="block text-xs font-bold text-slate-700">
-              Email Address <span className="text-slate-400 font-normal">(Optional per brief)</span>
+              Email Address <span className="text-slate-400 font-normal">(Optional)</span>
             </label>
             <input
               id="email"

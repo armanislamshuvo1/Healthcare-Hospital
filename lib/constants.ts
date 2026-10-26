@@ -1,9 +1,9 @@
-import { DoctorProfile, HospitalService, ManagementMember, NavItem, CoreValue } from "@/types";
+import { DoctorProfile, HospitalService, ManagementMember, NavItem, CoreValue, HeroSlide } from "@/types";
 
 export const HOSPITAL_INFO = {
   name: "Healthcare Hospital",
   locationName: "Chattogram, Bangladesh",
-  fullAddress: "106 E K.B. Fazlul Kader Rd, Chattogram",
+  fullAddress: "106 E K.B. Fazlul Kader Rd, Chattogram 4203, Bangladesh",
   displayPhone: "016*******",
   dialPhone: "+8801600000000",
   emergencyPhone: "016******* (24/7)",
@@ -11,10 +11,11 @@ export const HOSPITAL_INFO = {
   email: "info@healthcarehospital-ctg.com",
   emergencyEmail: "emergency@healthcarehospital-ctg.com",
   hours: "24 Hours Open (Emergency & Inpatient)",
-  opdHours: "Saturday - Thursday: 4:00 PM - 9:00 PM",
+  opdHours: "Saturday - Thursday: 5:00 PM - 9:00 PM",
   emergencyHours: "24/7 Immediate Attention",
   establishedYear: "2018",
-  tagline: "Care, Compassion & Excellence in Chattogram",
+  tagline: "Care, Compassion, Excellence",
+  wards: "1 Emergency Ward, 1 General Medicine Ward",
 };
 
 export const NAV_ITEMS: NavItem[] = [
@@ -28,12 +29,12 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const DOCTOR_PROFILE: DoctorProfile = {
   name: "Dr. A.S.M. Rashedul Hasan",
-  designation: "Consultant Physician & Specialist",
-  degrees: ["MBBS (Chittagong Medical College)", "FCPS (Medicine)"],
+  designation: "Consultant (Medicine)",
+  degrees: ["MBBS", "FCPS (Medicine)"],
   specialty: "Internal Medicine & General Practice",
   experience: "12+ Years Clinical Experience",
   about:
-    "Dr. A.S.M. Rashedul Hasan is a renowned Medicine Consultant dedicated to delivering evidence-based, compassionate diagnosis and therapy for complex adult medical conditions, chronic metabolic disorders, and acute illnesses.",
+    "Dr. A.S.M. Rashedul Hasan is the senior Consultant Physician at Healthcare Hospital, delivering evidence-based medicine, accurate diagnostic evaluation, and comprehensive management for chronic and acute adult conditions.",
   schedule: [
     { days: "Saturday - Wednesday", time: "5:00 PM - 9:00 PM", room: "Chamber 201, OPD Block" },
     { days: "Thursday", time: "6:00 PM - 9:00 PM", room: "Chamber 201, OPD Block" },
@@ -46,15 +47,51 @@ export const DOCTOR_PROFILE: DoctorProfile = {
 export const MANAGEMENT_MEMBERS: ManagementMember[] = [
   {
     name: "Dr. Abdul Karim",
-    role: "Medical Director & Chairman",
-    qualifications: "MBBS, MPH (Health Administration)",
-    bio: "With over 25 years of public and private healthcare leadership in Chattogram, Dr. Karim oversees clinical governance, patient safety protocols, and medical staff excellence at Healthcare Hospital.",
+    role: "Managing Director",
+    qualifications: "MBBS, CCD (BIRDEM)",
+    bio: "Dr. Abdul Karim leads Healthcare Hospital's clinical standards, institutional governance, and quality assurance with a distinguished background in medicine and diabetes care from BIRDEM.",
   },
   {
     name: "Mr. Anwar Kamal",
-    role: "Managing Director & Operations Head",
-    qualifications: "M.Com, MBA (Hospital Management)",
-    bio: "Mr. Kamal brings extensive healthcare operations and infrastructure management experience, ensuring uninterrupted 24/7 hospital utility readiness, diagnostic support, and patient-centered service delivery.",
+    role: "Hospital Manager",
+    qualifications: "Hospital Administration",
+    bio: "Mr. Anwar Kamal oversees daily hospital operations, facility maintenance, emergency desk logistics, and patient support services to ensure smooth hospital functioning.",
+  },
+];
+
+export const HERO_SLIDES: HeroSlide[] = [
+  {
+    id: 1,
+    badge: "Consultant Physician OPD",
+    headline: "Expert Medicine Consultation by Dr. A.S.M. Rashedul Hasan",
+    subtext: "Personalized, evidence-based adult medical diagnosis and chronic disease management in Chamber 201.",
+    primaryCtaText: "Book Appointment",
+    primaryCtaHref: "/appointment",
+    secondaryCtaText: "View Schedule",
+    secondaryCtaHref: "/doctor",
+    isEmergencySlide: false,
+  },
+  {
+    id: 2,
+    badge: "24/7 Rapid Emergency Ward",
+    headline: "Immediate Doctor-Led Emergency Triage & Stabilization",
+    subtext: "Equipped observation beds, oxygen delivery, and immediate trauma resuscitation available 24 hours daily.",
+    primaryCtaText: "Emergency: 016*******",
+    primaryCtaHref: "tel:+8801600000000",
+    secondaryCtaText: "Ward Services",
+    secondaryCtaHref: "/services",
+    isEmergencySlide: true,
+  },
+  {
+    id: 3,
+    badge: "1 General Medicine Ward",
+    headline: "Dedicated Inpatient Care with Continuous Nursing Supervision",
+    subtext: "Hygienic beds, daily consultant rounds, and caring medical attention at 106 E K.B. Fazlul Kader Road.",
+    primaryCtaText: "Explore Services",
+    primaryCtaHref: "/services",
+    secondaryCtaText: "How to Visit",
+    secondaryCtaHref: "/#how-to-visit",
+    isEmergencySlide: false,
   },
 ];
 
@@ -62,7 +99,7 @@ export const HOSPITAL_SERVICES: HospitalService[] = [
   {
     id: "consultant-opd",
     title: "Consultant OPD",
-    shortDesc: "Specialist consultation chamber by Dr. A.S.M. Rashedul Hasan for comprehensive adult medicine care.",
+    shortDesc: "Specialist consultation chamber by Dr. A.S.M. Rashedul Hasan (MBBS, FCPS Medicine).",
     fullDesc:
       "Our Outpatient Department (OPD) provides personalized consultation, diagnosis, chronic disease management (diabetes, hypertension, asthma, infectious diseases), and systematic preventive health screenings.",
     features: [
@@ -130,17 +167,18 @@ export const CORE_VALUES: CoreValue[] = [
 export const HOW_TO_VISIT_STEPS = [
   {
     step: 1,
-    title: "Request Appointment",
-    desc: "Book online through our portal or call our hotline to reserve your consultation slot.",
+    title: "Call",
+    desc: "Call our hospital reception (016*******) or emergency hotline to enquire about doctor availability.",
   },
   {
     step: 2,
-    title: "Visit Our Hospital",
-    desc: "Arrive at 106 E K.B. Fazlul Kader Rd, Chattogram 15 minutes before your scheduled slot.",
+    title: "Book",
+    desc: "Reserve your serial token online through our appointment form or receive it directly over the phone.",
   },
   {
     step: 3,
-    title: "Expert Consultation",
-    desc: "Meet Dr. Hasan for in-depth clinical diagnosis, investigation planning, and tailored treatment.",
+    title: "Visit",
+    desc: "Arrive at 106 E K.B. Fazlul Kader Rd, Chattogram 15 minutes before your slot for consultation.",
   },
 ];
+

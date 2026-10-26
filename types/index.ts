@@ -40,10 +40,27 @@ export interface HospitalService {
 export interface AppointmentFormData {
   patientName: string;
   phoneNumber: string;
+  email?: string;
   age: string;
   gender: 'male' | 'female' | 'other' | '';
   appointmentDate: string;
   reason: string;
+  hpField?: string;
+}
+
+export interface AppointmentRequestRecord {
+  id: string;
+  token: string;
+  patientName: string;
+  phoneNumber: string;
+  email?: string;
+  age: string;
+  gender: string;
+  appointmentDate: string;
+  reason: string;
+  doctorName: string;
+  status: 'Called' | 'Confirmed' | 'Cancelled';
+  submittedAt: string;
 }
 
 export interface ContactFormData {
@@ -52,6 +69,7 @@ export interface ContactFormData {
   email: string;
   subject: string;
   message: string;
+  hpField?: string;
 }
 
 export interface CoreValue {
@@ -59,3 +77,16 @@ export interface CoreValue {
   description: string;
   iconName: string;
 }
+
+export interface HeroSlide {
+  id: number;
+  badge: string;
+  headline: string;
+  subtext: string;
+  primaryCtaText: string;
+  primaryCtaHref: string;
+  secondaryCtaText: string;
+  secondaryCtaHref: string;
+  isEmergencySlide?: boolean;
+}
+

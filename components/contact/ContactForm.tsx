@@ -28,6 +28,7 @@ export function ContactForm() {
     contactEmail: "",
     contactSubject: "",
     contactMessage: "",
+    hpField: "",
   });
 
   const [errors, setErrors] = useState<ContactErrors>({});
@@ -88,6 +89,22 @@ export function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Honeypot spam defense check
+    if (formData.hpField && formData.hpField.trim().length > 0) {
+      setIsSubmitting(true);
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setSubmittedInquiry({
+          id: `INQ-${Date.now().toString().slice(-6)}`,
+          name: formData.contactName,
+          phone: formData.contactPhone,
+          subject: formData.contactSubject,
+          time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        });
+      }, 500);
+      return;
+    }
+
     const allTouched = {
       contactName: true,
       contactPhone: true,
@@ -134,6 +151,7 @@ export function ContactForm() {
       contactEmail: "",
       contactSubject: "",
       contactMessage: "",
+      hpField: "",
     });
     setErrors({});
     setTouched({});
@@ -166,7 +184,7 @@ export function ContactForm() {
             </div>
 
             <p className="text-xs text-teal-800 leading-relaxed pt-1">
-              Thank you, <strong className="text-teal-950">{submittedInquiry.name}</strong>. Our hospital front desk has received your inquiry regarding <em>&quot;{submittedInquiry.subject}&quot;</em> and will contact you back at <strong className="text-teal-950">{submittedInquiry.phone}</strong> during standard reception hours.
+              Thank you, <strong className="text-teal-950">{submittedInquiry.name}</strong>. Our hospital reception desk has received your inquiry regarding <em>&quot;{submittedInquiry.subject}&quot;</em> and will contact you back at <strong className="text-teal-950">{submittedInquiry.phone}</strong>.
             </p>
           </div>
 
@@ -185,6 +203,20 @@ export function ContactForm() {
         </div>
       ) : (
         <form className="space-y-4" onSubmit={handleSubmit} noValidate>
+          {/* Honeypot Spam Protection */}
+          <div className="hidden" aria-hidden="true">
+            <label htmlFor="hp_contact_url">Leave empty</label>
+            <input
+              id="hp_contact_url"
+              name="hp_contact_url"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={formData.hpField}
+              onChange={(e) => handleChange("hpField", e.target.value)}
+            />
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Name */}
             <div className="space-y-1.5">
@@ -206,11 +238,9 @@ export function ContactForm() {
                     ? "border-red-500 focus:border-red-600 focus:ring-2 focus:ring-red-500/20"
                     : "border-slate-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20"
                 )}
-                aria-invalid={Boolean(touched.contactName && errors.name)}
-                aria-describedby={touched.contactName && errors.name ? "contactName-error" : undefined}
               />
               {touched.contactName && errors.name && (
-                <p id="contactName-error" className="text-xs text-red-600 flex items-center gap-1 mt-1 font-medium">
+                <p className="text-xs text-red-600 flex items-center gap-1 mt-1 font-medium">
                   <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>{errors.name}</span>
                 </p>
@@ -237,11 +267,9 @@ export function ContactForm() {
                     ? "border-red-500 focus:border-red-600 focus:ring-2 focus:ring-red-500/20"
                     : "border-slate-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20"
                 )}
-                aria-invalid={Boolean(touched.contactPhone && errors.phone)}
-                aria-describedby={touched.contactPhone && errors.phone ? "contactPhone-error" : undefined}
               />
               {touched.contactPhone && errors.phone && (
-                <p id="contactPhone-error" className="text-xs text-red-600 flex items-center gap-1 mt-1 font-medium">
+                <p className="text-xs text-red-600 flex items-center gap-1 mt-1 font-medium">
                   <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>{errors.phone}</span>
                 </p>
@@ -268,11 +296,9 @@ export function ContactForm() {
                   ? "border-red-500 focus:border-red-600 focus:ring-2 focus:ring-red-500/20"
                   : "border-slate-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20"
               )}
-              aria-invalid={Boolean(touched.contactEmail && errors.email)}
-              aria-describedby={touched.contactEmail && errors.email ? "contactEmail-error" : undefined}
             />
             {touched.contactEmail && errors.email && (
-              <p id="contactEmail-error" className="text-xs text-red-600 flex items-center gap-1 mt-1 font-medium">
+              <p className="text-xs text-red-600 flex items-center gap-1 mt-1 font-medium">
                 <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
                 <span>{errors.email}</span>
               </p>
@@ -288,7 +314,7 @@ export function ContactForm() {
               id="contactSubject"
               name="contactSubject"
               type="text"
-              placeholder="e.g. Appointment availability question"
+              placeholder="e.g. Inpatient admission inquiry"
               required
               value={formData.contactSubject}
               onChange={(e) => handleChange("contactSubject", e.target.value)}
@@ -299,11 +325,9 @@ export function ContactForm() {
                   ? "border-red-500 focus:border-red-600 focus:ring-2 focus:ring-red-500/20"
                   : "border-slate-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20"
               )}
-              aria-invalid={Boolean(touched.contactSubject && errors.subject)}
-              aria-describedby={touched.contactSubject && errors.subject ? "contactSubject-error" : undefined}
             />
             {touched.contactSubject && errors.subject && (
-              <p id="contactSubject-error" className="text-xs text-red-600 flex items-center gap-1 mt-1 font-medium">
+              <p className="text-xs text-red-600 flex items-center gap-1 mt-1 font-medium">
                 <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
                 <span>{errors.subject}</span>
               </p>
@@ -330,11 +354,9 @@ export function ContactForm() {
                   ? "border-red-500 focus:border-red-600 focus:ring-2 focus:ring-red-500/20"
                   : "border-slate-300 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20"
               )}
-              aria-invalid={Boolean(touched.contactMessage && errors.message)}
-              aria-describedby={touched.contactMessage && errors.message ? "contactMessage-error" : undefined}
             />
             {touched.contactMessage && errors.message && (
-              <p id="contactMessage-error" className="text-xs text-red-600 flex items-center gap-1 mt-1 font-medium">
+              <p className="text-xs text-red-600 flex items-center gap-1 mt-1 font-medium">
                 <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
                 <span>{errors.message}</span>
               </p>

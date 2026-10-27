@@ -18,29 +18,50 @@ import {
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { HOSPITAL_INFO, HERO_SLIDES, DOCTOR_PROFILE } from "@/lib/constants";
+import { HeroSlide } from "@/types";
 
 export function HeroBanner() {
+  const [slides, setSlides] = useState<HeroSlide[]>(HERO_SLIDES);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const stored = localStorage.getItem("hh_hero_slides");
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            setSlides(parsed);
+          }
+        }
+      } catch (err) {
+        console.error("Error loading custom hero slides:", err);
+      }
+    }
+  }, []);
+
   const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    setSlides((currentSlides) => {
+      setCurrentSlide((prev) => (prev + 1) % currentSlides.length);
+      return currentSlides;
+    });
   }, []);
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || slides.length === 0) return;
     const interval = setInterval(() => {
       nextSlide();
     }, 4500); // Auto rotates every 4.5 seconds
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, nextSlide, currentSlide]);
+  }, [isAutoPlaying, nextSlide, currentSlide, slides.length]);
 
-  const slide = HERO_SLIDES[currentSlide];
+  const slide = slides[currentSlide] || slides[0] || HERO_SLIDES[0];
 
   return (
     <section
@@ -114,7 +135,7 @@ export function HeroBanner() {
             {/* Slider Navigation Dots & Controls */}
             <div className="flex items-center gap-4 pt-4">
               <div className="flex items-center gap-2">
-                {HERO_SLIDES.map((_, idx) => (
+                {slides.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
@@ -150,7 +171,7 @@ export function HeroBanner() {
                   {isAutoPlaying ? <Pause className="w-3.5 h-3.5 text-teal-400" /> : <Play className="w-3.5 h-3.5 text-slate-300" />}
                 </button>
                 <span className="text-xs text-slate-400 font-mono ml-2">
-                  0{currentSlide + 1} / 0{HERO_SLIDES.length}
+                  0{currentSlide + 1} / 0{slides.length}
                 </span>
               </div>
             </div>

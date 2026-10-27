@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { DoctorScheduleDisplay } from "@/components/doctor/DoctorScheduleDisplay";
 import { DOCTOR_PROFILE, HOSPITAL_INFO, MANAGEMENT_MEMBERS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -177,19 +178,7 @@ export default function DoctorPage() {
                   </Badge>
                 </div>
 
-                <div className="divide-y divide-slate-100">
-                  {DOCTOR_PROFILE.schedule.map((item, index) => (
-                    <div key={index} className="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                      <div>
-                        <span className="font-bold text-slate-800 text-sm">{item.days}</span>
-                        <span className="text-xs text-slate-500 block">{item.room}</span>
-                      </div>
-                      <span className="inline-flex items-center px-3 py-1 rounded-lg bg-teal-50 text-teal-800 font-semibold text-xs border border-teal-200 self-start sm:self-auto">
-                        {item.time}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                <DoctorScheduleDisplay />
 
                 <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200 text-xs text-slate-600 flex items-start gap-2.5">
                   <MapPin className="w-4 h-4 text-teal-600 flex-shrink-0 mt-0.5" />

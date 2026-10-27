@@ -1,11 +1,37 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { User, Calendar, Award, MapPin, ArrowRight, ShieldCheck, Stethoscope } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { DOCTOR_PROFILE, MANAGEMENT_MEMBERS } from "@/lib/constants";
+import { ScheduleSlot } from "@/types";
 
 export function DoctorSpotlight() {
+  const [schedule, setSchedule] = useState<ScheduleSlot[]>(DOCTOR_PROFILE.schedule);
+  const [fee, setFee] = useState<string>(DOCTOR_PROFILE.consultationFee);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const storedSchedule = localStorage.getItem("hh_doctor_schedule");
+        if (storedSchedule) {
+          const parsed = JSON.parse(storedSchedule);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            setSchedule(parsed);
+          }
+        }
+        const storedSettings = localStorage.getItem("hh_hospital_settings");
+        if (storedSettings) {
+          const s = JSON.parse(storedSettings);
+          if (s.consultationFee) setFee(s.consultationFee);
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }, []);
   return (
     <section className="py-16 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -71,7 +97,7 @@ export function DoctorSpotlight() {
                     Chamber Schedule (OPD):
                   </span>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {DOCTOR_PROFILE.schedule.map((item, idx) => (
+                    {schedule.map((item, idx) => (
                       <div
                         key={idx}
                         className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between"
@@ -86,7 +112,7 @@ export function DoctorSpotlight() {
 
                 <div className="mt-5 p-3 rounded-xl bg-teal-50/70 border border-teal-100 flex items-center justify-between text-xs">
                   <span className="text-teal-900 font-medium">Consultation Fee:</span>
-                  <span className="font-bold text-teal-800">{DOCTOR_PROFILE.consultationFee}</span>
+                  <span className="font-bold text-teal-800">{fee}</span>
                 </div>
               </div>
 

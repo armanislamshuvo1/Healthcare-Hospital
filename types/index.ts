@@ -3,6 +3,12 @@ export interface NavItem {
   href: string;
 }
 
+export interface ScheduleSlot {
+  days: string;
+  time: string;
+  room: string;
+}
+
 export interface DoctorProfile {
   name: string;
   designation: string;
@@ -10,11 +16,7 @@ export interface DoctorProfile {
   specialty: string;
   experience: string;
   about: string;
-  schedule: {
-    days: string;
-    time: string;
-    room: string;
-  }[];
+  schedule: ScheduleSlot[];
   consultationFee: string;
   languages: string[];
 }

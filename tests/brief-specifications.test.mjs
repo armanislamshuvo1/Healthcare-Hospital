@@ -10,11 +10,11 @@ describe("Developer Brief Specifications Suite", () => {
   const constantsContent = fs.readFileSync(constantsPath, "utf-8");
 
   describe("Brief Requirement 1: 3 Team Members with Exact Qualifications", () => {
-    it("verifies Dr. A.S.M. Rashedul Hasan as Consultant (Medicine) with MBBS, FCPS (Medicine)", () => {
-      assert.match(constantsContent, /Dr\. A\.S\.M\. Rashedul Hasan/);
-      assert.match(constantsContent, /Consultant \(Medicine\)/);
+    it("verifies Dr. Shahidul Amin as Consultant with MBBS, MS (Cardiovascular and Thoracic Surgery)", () => {
+      assert.match(constantsContent, /Dr\. Shahidul Amin/);
+      assert.match(constantsContent, /Consultant \(Cardiovascular/);
       assert.match(constantsContent, /MBBS/);
-      assert.match(constantsContent, /FCPS \(Medicine\)/);
+      assert.match(constantsContent, /MS \(Cardiovascular and Thoracic Surgery\)/);
     });
 
     it("verifies Dr. Abdul Karim as Managing Director with MBBS, CCD (BIRDEM)", () => {

@@ -73,12 +73,12 @@ describe("E2E Scenarios & Cross-Feature Integration Suite", () => {
     });
 
     it("CF3: Services OPD Card + Doctor Consultation Schedule alignment", () => {
-      assert.match(doctorContent, /Dr\. A\.S\.M\. Rashedul Hasan/);
+      assert.match(doctorContent, /Dr\. Shahidul Amin/);
       assert.match(doctorContent, /MBBS/);
-      assert.match(doctorContent, /FCPS/);
+      assert.match(doctorContent, /MS/);
       assert.match(servicesContent, /HOSPITAL_SERVICES\.map/);
       assert.match(constantsContent, /Consultant OPD/);
-      assert.match(constantsContent, /Dr\. A\.S\.M\. Rashedul Hasan/);
+      assert.match(constantsContent, /Dr\. Shahidul Amin/);
     });
 
     it("CF4: Emergency Red Isolation between Floating FAB and routine buttons", () => {
@@ -91,7 +91,7 @@ describe("E2E Scenarios & Cross-Feature Integration Suite", () => {
         name: "Tanvir Ahmed",
         phone: "+880 18 1234 5678",
         subject: "Inquiry about Medicine OPD slot",
-        message: "Can I book a serial for Dr. Hasan on Thursday evening?",
+        message: "Can I book a serial for Dr. Amin on Thursday evening?",
       };
 
       const phoneValidation = validateBangladeshiPhone(contactSubmission.phone);

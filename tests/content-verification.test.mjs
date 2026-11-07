@@ -50,16 +50,16 @@ describe("Layout & Clinical Content Verification Suite", () => {
   });
 
   describe("Tier 1: Consultant Doctor Credentials & Schedule", () => {
-    it("verifies consultant name is 'Dr. A.S.M. Rashedul Hasan'", () => {
-      assert.match(constantsContent, /name:\s*["']Dr\. A\.S\.M\. Rashedul Hasan["']/);
+    it("verifies consultant name is 'Dr. Shahidul Amin'", () => {
+      assert.match(constantsContent, /name:\s*["']Dr\. Shahidul Amin["']/);
     });
 
-    it("verifies qualifications include MBBS and FCPS (Medicine)", () => {
-      assert.match(constantsContent, /degrees:\s*\[[\s\S]*?MBBS[\s\S]*?FCPS[\s\S]*?Medicine[\s\S]*?\]/);
+    it("verifies qualifications include MBBS and MS (Cardiovascular and Thoracic Surgery)", () => {
+      assert.match(constantsContent, /degrees:\s*\[[\s\S]*?MBBS[\s\S]*?MS[\s\S]*?Cardiovascular[\s\S]*?\]/);
     });
 
-    it("verifies internal medicine specialty", () => {
-      assert.match(constantsContent, /specialty:\s*["'][^"']*Medicine/i);
+    it("verifies cardiovascular and thoracic surgery specialty", () => {
+      assert.match(constantsContent, /specialty:\s*["'][^"']*Cardiovascular/i);
     });
 
     it("verifies OPD chamber schedule contains consultation hours", () => {

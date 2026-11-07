@@ -12,6 +12,9 @@
 
 # production
 /build
+/dist/
+dist.zip
+components/dist/
 
 # misc
 .DS_Store

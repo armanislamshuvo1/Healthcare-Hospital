@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const targets = ['.next', 'tsconfig.tsbuildinfo', 'node_modules/.cache'];
+const targets = ['dist', '.next', 'tsconfig.tsbuildinfo', 'node_modules/.cache'];
 
 for (const target of targets) {
   const fullPath = path.resolve(process.cwd(), target);

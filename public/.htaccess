@@ -1,0 +1,79 @@
+# ==============================================================================
+# Healthcare Hospital (Chattogram) — cPanel Apache .htaccess
+# Hosting Target: cPanel public_html (Apache 2.4+)
+# Framework: Standalone Vite + React SPA
+# ==============================================================================
+
+# 1. Directory Browsing & Options
+Options -Indexes +FollowSymLinks -MultiViews
+
+# 2. Default Directory Index
+DirectoryIndex index.html
+
+# 3. SPA Client-Side Routing Fallback (HTML5 pushState / React Router)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# 4. MIME Types for Modern Web Bundles & ES Modules
+<IfModule mod_mime.c>
+  AddType application/javascript              js mjs
+  AddType text/css                           css
+  AddType image/svg+xml                      svg svgz
+  AddType font/woff2                         woff2
+  AddType font/woff                          woff
+  AddType font/ttf                           ttf
+  AddType font/eot                           eot
+  AddType image/webp                         webp
+  AddType image/avif                         avif
+  AddType application/json                   json
+  AddType application/manifest+json          webmanifest
+</IfModule>
+
+# 5. Gzip / Deflate Compression for Payloads
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/woff
+  AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# 6. HTTP Caching Headers (Cache Busting Strategy)
+<IfModule mod_headers.c>
+  # HTML Documents: Never cache to guarantee immediate update propagation on deploy
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
+
+  # Hashed Static Assets: Cache for 1 year immutable
+  <FilesMatch "\.(js|mjs|css|woff2|woff|ttf|eot|svg|png|jpe?g|webp|avif|ico|gif)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Security Headers
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# 7. Block Access to Hidden / Sensitive Files (except .htaccess itself)
+<FilesMatch "^\.(?!htaccess)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>

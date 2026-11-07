@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <title>Healthcare Hospital | Care, Compassion, Excellence in Chattogram</title>
+    <meta
+      name="description"
+      content="Healthcare Hospital at 106 E K.B. Fazlul Kader Rd, Chattogram 4203. Specialized adult consultation by Dr. A.S.M. Rashedul Hasan, 24/7 Emergency Ward, and Medicine Inpatient Care."
+    />
+    <meta
+      name="keywords"
+      content="Healthcare Hospital, Chattogram Hospital, Dr. A.S.M. Rashedul Hasan, Dr. Abdul Karim, Mr. Anwar Kamal, K.B. Fazlul Kader Road, Medicine Consultant Chattogram, Emergency Hospital Chattogram"
+    />
+    <meta name="theme-color" content="#0d9488" />
+
+    <!-- Open Graph / Social Media Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://healthcarehospital-ctg.com" />
+    <meta property="og:title" content="Healthcare Hospital | Chattogram" />
+    <meta
+      property="og:description"
+      content="Specialist adult medicine consultation &amp; 24/7 emergency care in Chattogram."
+    />
+    <meta property="og:image" content="https://healthcarehospital-ctg.com/logo.svg" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Fonts (System UI Fallback matching app/globals.css) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data: MedicalOrganization Schema (replicates app/layout.tsx) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalOrganization",
+        "name": "Healthcare Hospital",
+        "url": "https://healthcarehospital-ctg.com",
+        "logo": "https://healthcarehospital-ctg.com/logo.svg",
+        "telephone": "+8801600000000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "106 E K.B. Fazlul Kader Rd",
+          "addressLocality": "Chattogram",
+          "postalCode": "4203",
+          "addressCountry": "BD"
+        },
+        "medicalSpecialty": "Internal Medicine",
+        "department": [
+          {
+            "@type": "EmergencyService",
+            "name": "24/7 Emergency Ward",
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "servicePhone": "+8801600000000"
+            }
+          },
+          {
+            "@type": "MedicalClinic",
+            "name": "Consultant OPD",
+            "physician": {
+              "@type": "Physician",
+              "name": "Dr. A.S.M. Rashedul Hasan",
+              "medicalSpecialty": "Consultant Physician & Medicine Specialist"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="h-full bg-slate-50 text-slate-800 antialiased selection:bg-teal-100 selection:text-teal-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

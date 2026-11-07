@@ -42,7 +42,7 @@ const INITIAL_DEMO_RECORDS: AppointmentRequestRecord[] = [
     gender: "male",
     appointmentDate: "2026-10-28",
     reason: "Uncontrolled blood pressure and chronic fatigue evaluation",
-    doctorName: "Dr. A.S.M. Rashedul Hasan",
+    doctorName: "Dr. Shahidul Amin",
     status: "Called",
     submittedAt: "Oct 26, 04:30 PM",
   },
@@ -56,7 +56,7 @@ const INITIAL_DEMO_RECORDS: AppointmentRequestRecord[] = [
     gender: "female",
     appointmentDate: "2026-10-29",
     reason: "Persistent fever and joint pain checkup",
-    doctorName: "Dr. A.S.M. Rashedul Hasan",
+    doctorName: "Dr. Shahidul Amin",
     status: "Confirmed",
     submittedAt: "Oct 26, 02:15 PM",
   },
@@ -69,7 +69,7 @@ const INITIAL_DEMO_RECORDS: AppointmentRequestRecord[] = [
     gender: "male",
     appointmentDate: "2026-10-27",
     reason: "Diabetes follow-up and medicine prescription review",
-    doctorName: "Dr. A.S.M. Rashedul Hasan",
+    doctorName: "Dr. Shahidul Amin",
     status: "Cancelled",
     submittedAt: "Oct 25, 06:40 PM",
   },
@@ -91,7 +91,7 @@ export default function AdminPage() {
 
   // Notice Strip state
   const [noticeText, setNoticeText] = useState(
-    "Notice: OPD consultation serials are open for Dr. A.S.M. Rashedul Hasan (Sat-Thu). 24/7 Emergency Ward operational."
+    "Notice: OPD consultation serials are open for Dr. Shahidul Amin (Sat-Thu). 24/7 Emergency Ward operational."
   );
   const [noticeSaved, setNoticeSaved] = useState(false);
 
@@ -613,7 +613,7 @@ export default function AdminPage() {
               <div>
                 <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
                   <Clock className="w-5 h-5 text-teal-600" />
-                  Dr. A.S.M. Rashedul Hasan — Consultation Schedule Manager
+                  Dr. Shahidul Amin — Consultation Schedule Manager
                 </h2>
                 <p className="text-xs text-slate-500 mt-0.5">
                   Update consultation days, timings, and chamber fees without editing code. Changes reflect immediately on <code className="text-teal-700 font-mono">/doctor</code> and Home spotlight.
@@ -994,7 +994,7 @@ export default function AdminPage() {
                   </h3>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  When Dr. A.S.M. Rashedul Hasan updates consulting hours, go to <strong>Doctor Schedule & Fees</strong>:
+                  When Dr. Shahidul Amin updates consulting hours, go to <strong>Doctor Schedule & Fees</strong>:
                 </p>
                 <ul className="text-xs text-slate-600 space-y-1 list-disc pl-4">
                   <li>Edit days (e.g. Sat–Thu), timings (e.g. 5:00 PM – 9:00 PM), or room.</li>
@@ -1038,7 +1038,7 @@ export default function AdminPage() {
                 <div className="flex flex-wrap gap-4 pt-1 font-semibold text-red-800">
                   <span>Emergency Desk: {HOSPITAL_INFO.emergencyPhone}</span>
                   <span>Managing Director: Dr. Abdul Karim</span>
-                  <span>Consultant: Dr. A.S.M. Rashedul Hasan</span>
+                  <span>Consultant: Dr. Shahidul Amin</span>
                 </div>
               </div>
             </div>

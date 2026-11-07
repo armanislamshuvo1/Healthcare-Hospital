@@ -260,7 +260,7 @@ export function AppointmentForm() {
             Consultation Request Form
           </h2>
           <Badge variant="teal" size="sm">
-            Dr. A.S.M. Rashedul Hasan (Medicine)
+            {DOCTOR_PROFILE.name} (Cardiovascular & Thoracic Surgery)
           </Badge>
         </div>
         <p className="text-xs sm:text-sm text-slate-600">

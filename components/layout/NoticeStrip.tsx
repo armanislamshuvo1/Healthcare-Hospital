@@ -3,11 +3,11 @@
 import React, { useState, useEffect } from "react";
 import { Megaphone, X, PhoneCall } from "lucide-react";
 import Link from "next/link";
-import { HOSPITAL_INFO } from "@/lib/constants";
+import { HOSPITAL_INFO, DOCTOR_PROFILE } from "@/lib/constants";
 
 export function NoticeStrip() {
   const [notice, setNotice] = useState<string>(
-    "Notice: OPD consultation serials are open for Dr. A.S.M. Rashedul Hasan (Sat-Thu). 24/7 Emergency Ward operational."
+    `Notice: OPD consultation serials are open for ${DOCTOR_PROFILE.name} (Sat-Thu). 24/7 Cardiac Emergency Ward operational.`
   );
   const [isVisible, setIsVisible] = useState(true);
 

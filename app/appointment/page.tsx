@@ -6,9 +6,9 @@ import { AppointmentForm } from "@/components/appointment/AppointmentForm";
 import { AppointmentSidebar } from "@/components/appointment/AppointmentSidebar";
 
 export const metadata: Metadata = {
-  title: "Book Appointment | Dr. A.S.M. Rashedul Hasan Chamber",
+  title: "Book Appointment | Dr. Shahidul Amin Chamber",
   description:
-    "Request an OPD appointment with Dr. A.S.M. Rashedul Hasan at Healthcare Hospital Chattogram. Fast online booking and tap-to-call serial hotline.",
+    "Request an OPD appointment with Dr. Shahidul Amin (Cardiovascular & Thoracic Surgery) at Healthcare Hospital Chattogram. Fast online booking and tap-to-call serial hotline.",
 };
 
 export default function AppointmentPage() {
@@ -25,7 +25,7 @@ export default function AppointmentPage() {
               Book a Doctor Consultation
             </h1>
             <p className="text-base sm:text-lg text-slate-300">
-              Schedule your appointment with <span className="text-teal-300 font-semibold">{DOCTOR_PROFILE.name}</span> (MBBS, FCPS Medicine).
+              Schedule your appointment with <span className="text-teal-300 font-semibold">{DOCTOR_PROFILE.name}</span> ({DOCTOR_PROFILE.degrees.join(", ")}).
             </p>
           </div>
         </div>

@@ -10,7 +10,7 @@ import {
   Activity,
   Heart,
 } from "lucide-react";
-import { HOSPITAL_INFO, NAV_ITEMS, HOSPITAL_SERVICES } from "@/lib/constants";
+import { HOSPITAL_INFO, NAV_ITEMS, HOSPITAL_SERVICES, DOCTOR_PROFILE } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -72,7 +72,7 @@ export function Footer() {
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed">
-              Providing dedicated adult medicine consultation by Dr. A.S.M. Rashedul Hasan and round-the-clock emergency support for the Chattogram community.
+              Providing dedicated cardiovascular & thoracic consultation by {DOCTOR_PROFILE.name} and round-the-clock emergency support for the Chattogram community.
             </p>
 
             <div className="pt-2 text-xs text-slate-400 space-y-1">
@@ -81,7 +81,7 @@ export function Footer() {
                 <span>Govt. Registered Hospital Clinic</span>
               </div>
               <p className="text-[11px] text-slate-500">
-                Care, Compassion, Excellence • 1-Consultant Dedicated Focus
+                Cardiovascular Care, Compassion, Excellence • Specialized Cardiac Focus
               </p>
             </div>
           </div>

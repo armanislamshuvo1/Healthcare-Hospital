@@ -40,10 +40,10 @@ export function DoctorSpotlight() {
             Clinical Faculty
           </Badge>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Consultant Physician & Hospital Leadership
+            Cardiovascular Consultant & Hospital Leadership
           </h2>
           <p className="text-sm sm:text-base text-slate-600 mt-2">
-            Spearheaded by our lead consultant in adult medicine, supported by dedicated hospital administration.
+            Spearheaded by our lead consultant in cardiovascular & thoracic surgery, supported by dedicated hospital administration.
           </p>
         </div>
 
@@ -54,7 +54,7 @@ export function DoctorSpotlight() {
             <div className="md:col-span-5 bg-gradient-to-br from-teal-900 to-slate-900 p-8 sm:p-10 flex flex-col justify-between text-white relative">
               <div className="space-y-4">
                 <Badge variant="teal" dot size="sm" className="bg-teal-950/80 text-teal-300 border-teal-800">
-                  Lead Consultant Physician
+                  Lead Consultant Surgeon
                 </Badge>
 
                 <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-teal-800/40 border-2 border-teal-400/30 flex items-center justify-center text-teal-200 shadow-inner">

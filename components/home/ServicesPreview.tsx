@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Stethoscope, ShieldAlert, BedDouble, ArrowRight, PhoneCall } from "lucide-react";
+import { Stethoscope, ShieldAlert, BedDouble, ArrowRight, PhoneCall, CheckCircle2, HeartPulse } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 import { HOSPITAL_SERVICES, HOSPITAL_INFO } from "@/lib/constants";
 
 export function ServicesPreview() {
@@ -12,13 +11,13 @@ export function ServicesPreview() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
             <Badge variant="teal" size="sm" className="mb-2">
-              Clinical Departments
+              Cardiovascular Departments
             </Badge>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              Core Medical Services
+              Cardiovascular & Clinical Services
             </h2>
-            <p className="text-sm text-slate-600 mt-2 max-w-xl">
-              Specialized outpatient consultation, 24/7 emergency trauma care, and inpatient general medicine wards.
+            <p className="text-sm text-slate-600 mt-2 max-w-2xl">
+              Specialized cardiovascular & thoracic consultation, 24/7 acute chest pain & emergency triage, and dedicated cardiac inpatient monitoring.
             </p>
           </div>
           <Link
@@ -76,9 +75,28 @@ export function ServicesPreview() {
                     {service.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
                     {service.shortDesc}
                   </p>
+
+                  {/* Cardiac Points List from Brief */}
+                  <div className="mb-6 space-y-2 pt-2 border-t border-slate-100">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                      Key Services & Capabilities:
+                    </span>
+                    <ul className="space-y-1.5">
+                      {service.features.map((feat, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-xs text-slate-700">
+                          <CheckCircle2
+                            className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${
+                              isEmergency ? "text-red-500" : "text-teal-600"
+                            }`}
+                          />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
@@ -88,7 +106,7 @@ export function ServicesPreview() {
                       isEmergency ? "text-red-600" : "text-teal-700"
                     }`}
                   >
-                    <span>Learn More</span>
+                    <span>Full Details</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
 

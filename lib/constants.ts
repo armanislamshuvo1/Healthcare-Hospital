@@ -14,8 +14,8 @@ export const HOSPITAL_INFO = {
   opdHours: "Saturday - Thursday: 5:00 PM - 9:00 PM",
   emergencyHours: "24/7 Immediate Attention",
   establishedYear: "2018",
-  tagline: "Care, Compassion, Excellence",
-  wards: "1 Emergency Ward, 1 General Medicine Ward",
+  tagline: "Cardiovascular Care, Compassion, Excellence",
+  wards: "1 Emergency Ward, 1 Inpatient Cardiac Ward",
 };
 
 export const NAV_ITEMS: NavItem[] = [
@@ -28,13 +28,13 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const DOCTOR_PROFILE: DoctorProfile = {
-  name: "Dr. A.S.M. Rashedul Hasan",
-  designation: "Consultant (Medicine)",
-  degrees: ["MBBS", "FCPS (Medicine)"],
-  specialty: "Internal Medicine & General Practice",
-  experience: "12+ Years Clinical Experience",
+  name: "Dr. Shahidul Amin",
+  designation: "Consultant (Cardiovascular and Thoracic Surgery)",
+  degrees: ["MBBS", "MS (Cardiovascular and Thoracic Surgery)"],
+  specialty: "Cardiovascular and Thoracic Surgery",
+  experience: "Senior Consultant Specialist",
   about:
-    "Dr. A.S.M. Rashedul Hasan is the senior Consultant Physician at Healthcare Hospital, delivering evidence-based medicine, accurate diagnostic evaluation, and comprehensive management for chronic and acute adult conditions.",
+    "Dr. Shahidul Amin is the senior Consultant in Cardiovascular and Thoracic Surgery at Healthcare Hospital, delivering specialist evaluation for cardiac disorders, coronary conditions, chest pain evaluation, and thoracic surgical consultations.",
   schedule: [
     { days: "Saturday - Wednesday", time: "5:00 PM - 9:00 PM", room: "Chamber 201, OPD Block" },
     { days: "Thursday", time: "6:00 PM - 9:00 PM", room: "Chamber 201, OPD Block" },
@@ -63,8 +63,8 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 1,
     badge: "Consultant Physician OPD",
-    headline: "Expert Medicine Consultation by Dr. A.S.M. Rashedul Hasan",
-    subtext: "Personalized, evidence-based adult medical diagnosis and chronic disease management in Chamber 201.",
+    headline: "Specialized Cardiovascular & Thoracic Care in Chattogram",
+    subtext: "Expert consultation, cardiovascular evaluation, and thoracic surgical guidance by Dr. Shahidul Amin in Chamber 201.",
     primaryCtaText: "Book Appointment",
     primaryCtaHref: "/appointment",
     secondaryCtaText: "View Schedule",
@@ -74,8 +74,8 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 2,
     badge: "24/7 Rapid Emergency Ward",
-    headline: "Immediate Doctor-Led Emergency Triage & Stabilization",
-    subtext: "Equipped observation beds, oxygen delivery, and immediate trauma resuscitation available 24 hours daily.",
+    headline: "Rapid Assessment of Acute Chest Pain & Coronary Syndromes",
+    subtext: "Initial assessment of acute chest pain, recognition of acute coronary syndrome, and immediate resuscitation.",
     primaryCtaText: "Emergency: 016*******",
     primaryCtaHref: "tel:+8801600000000",
     secondaryCtaText: "Ward Services",
@@ -85,8 +85,8 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 3,
     badge: "1 General Medicine Ward",
-    headline: "Dedicated Inpatient Care with Continuous Nursing Supervision",
-    subtext: "Hygienic beds, daily consultant rounds, and caring medical attention at 106 E K.B. Fazlul Kader Road.",
+    headline: "Dedicated Inpatient Care with Continuous Cardiac Monitoring",
+    subtext: "Admission and monitoring of cardiac patients, management of stable heart failure, and supervised oxygen therapy.",
     primaryCtaText: "Explore Services",
     primaryCtaHref: "/services",
     secondaryCtaText: "How to Visit",
@@ -99,14 +99,14 @@ export const HOSPITAL_SERVICES: HospitalService[] = [
   {
     id: "consultant-opd",
     title: "Consultant OPD",
-    shortDesc: "Specialist consultation chamber by Dr. A.S.M. Rashedul Hasan (MBBS, FCPS Medicine).",
+    shortDesc: "Cardiovascular & Thoracic Surgery consultation by Dr. Shahidul Amin (MBBS, MS Cardiovascular and Thoracic Surgery).",
     fullDesc:
-      "Our Outpatient Department (OPD) provides personalized consultation, diagnosis, chronic disease management (diabetes, hypertension, asthma, infectious diseases), and systematic preventive health screenings.",
+      "Our Outpatient Department (OPD) provides personalized cardiovascular consultation, diagnosis, chest pain workup, pre/post-operative thoracic surgical review, and cardiac diagnostic evaluation.",
     features: [
-      "Dedicated chamber consultation with Dr. Hasan",
-      "Comprehensive diagnostic review & second opinion",
+      "Dedicated chamber consultation with Dr. Shahidul Amin",
+      "Cardiac enzymes and troponin testing (if available)",
+      "Holter monitoring and 12-lead ECG analysis",
       "Pre-booked digital serials to minimize waiting time",
-      "Digital prescription & follow-up tracking",
     ],
     isEmergency: false,
     availability: "Sat - Thu: 5:00 PM - 9:00 PM",
@@ -115,14 +115,15 @@ export const HOSPITAL_SERVICES: HospitalService[] = [
   {
     id: "emergency-ward",
     title: "24/7 Emergency Ward",
-    shortDesc: "Rapid-response triage and trauma stabilization unit staffed around the clock by experienced medical officers.",
+    shortDesc: "Immediate doctor-led triage and rapid-response cardiac stabilization unit for acute chest pain, acute coronary syndromes, and emergencies.",
     fullDesc:
-      "Equipped with oxygen delivery systems, cardiac monitoring, resuscitation crash carts, and dedicated emergency observation beds for urgent stabilization and admission.",
+      "Equipped with oxygen delivery systems, continuous cardiac monitoring, resuscitation crash carts, and dedicated observation beds for acute chest pain evaluation, immediate doctor-led triage, and stabilization.",
     features: [
-      "Immediate doctor-led triage without waiting",
-      "Point-of-care vital signs and ECG monitoring",
-      "Emergency medication infusion & nebulization unit",
-      "Immediate transfer to inpatient medicine ward",
+      "Initial assessment of acute chest pain",
+      "Recognition of acute coronary syndrome",
+      "Initial management of suspected myocardial infarction",
+      "Basic life support and resuscitation",
+      "Emergency referral to a tertiary cardiac centre",
     ],
     isEmergency: true,
     availability: "24 Hours / 7 Days a Week",
@@ -131,14 +132,15 @@ export const HOSPITAL_SERVICES: HospitalService[] = [
   {
     id: "general-medicine-ward",
     title: "General Medicine Ward",
-    shortDesc: "Comfortable inpatient ward facilities with round-the-clock nursing supervision and daily consultant rounds.",
+    shortDesc: "Specialized cardiac inpatient facility equipped for continuous cardiac monitoring, heart failure management, and oxygen therapy.",
     fullDesc:
-      "A clean, hygienic, and well-monitored inpatient medicine ward catering to patients recovering from acute medical conditions, fever syndromes, uncontrolled hypertension, and post-emergency observation.",
+      "A clean, hygienic, and continuously monitored inpatient ward catering to cardiac patients recovering from acute conditions, chest pain observation, and hypertension management.",
     features: [
-      "24/7 on-duty registered nursing care",
-      "Daily morning and evening consultant rounds",
-      "Hygienic patient beds with modern bedside call bells",
-      "Nutritious in-house clinical dietary supervision",
+      "Admission and monitoring of cardiac patients",
+      "Management of stable heart failure",
+      "Monitoring of hypertension & chest pain observation",
+      "Oxygen therapy & continuous cardiac monitoring",
+      "Initial stabilisation and referral of emergencies",
     ],
     isEmergency: false,
     availability: "24 Hours Inpatient Care",
@@ -149,7 +151,7 @@ export const HOSPITAL_SERVICES: HospitalService[] = [
 export const CORE_VALUES: CoreValue[] = [
   {
     title: "Care",
-    description: "Personalized attention tailored to every patient's unique physical, psychological, and clinical needs.",
+    description: "Personalized attention tailored to every cardiac patient's unique physical, psychological, and clinical needs.",
     iconName: "HeartPulse",
   },
   {
@@ -159,7 +161,7 @@ export const CORE_VALUES: CoreValue[] = [
   },
   {
     title: "Excellence",
-    description: "Strict adherence to evidence-based clinical standards, modern diagnostic accuracy, and sterile hospital protocols.",
+    description: "Strict adherence to evidence-based cardiovascular standards, modern diagnostic accuracy, and sterile protocols.",
     iconName: "Award",
   },
 ];
@@ -181,4 +183,3 @@ export const HOW_TO_VISIT_STEPS = [
     desc: "Arrive at 106 E K.B. Fazlul Kader Rd, Chattogram 15 minutes before your slot for consultation.",
   },
 ];
-

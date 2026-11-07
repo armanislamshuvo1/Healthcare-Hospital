@@ -17,6 +17,7 @@ import {
   HelpCircle,
   ShieldCheck,
   Building2,
+  HeartPulse,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -24,43 +25,43 @@ import { DoctorScheduleDisplay } from "@/components/doctor/DoctorScheduleDisplay
 import { DOCTOR_PROFILE, HOSPITAL_INFO, MANAGEMENT_MEMBERS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Our Doctor & Team | Dr. A.S.M. Rashedul Hasan (MBBS, FCPS Medicine)",
+  title: "Our Doctor & Team | Dr. Shahidul Amin (MBBS, MS Cardiovascular & Thoracic Surgery)",
   description:
-    "Meet Dr. A.S.M. Rashedul Hasan, Consultant (Medicine) at Healthcare Hospital Chattogram. View consultation schedule, fees, and hospital management leadership.",
+    "Meet Dr. Shahidul Amin, Consultant in Cardiovascular and Thoracic Surgery at Healthcare Hospital Chattogram. View consultation schedule, fees, and hospital leadership.",
 };
 
 export default function DoctorPage() {
   const preparationTips = [
     {
-      title: "Previous Prescriptions",
-      desc: "Bring all recent doctor prescriptions, hospital discharge summaries, or previous medical files.",
+      title: "Previous Prescriptions & Discharge Summaries",
+      desc: "Bring all recent cardiologist or physician prescriptions, surgery summaries, or angiogram records.",
     },
     {
-      title: "Diagnostic Reports",
-      desc: "Carry your latest blood work, ECG, ultrasound, or imaging investigations conducted within the past 6 months.",
+      title: "Cardiac Investigations & Reports",
+      desc: "Carry your latest 12-lead ECG, Echocardiogram, Troponin/cardiac enzymes, blood lipid profile, or Holter reports.",
     },
     {
       title: "Current Medication List",
-      desc: "Have a clear list of daily medications, insulin doses, or inhalers you are currently taking.",
+      desc: "Have an accurate list of daily cardiovascular medications, blood thinners, antihypertensives, or statins.",
     },
     {
       title: "Arrive 15 Minutes Early",
-      desc: "Report to the OPD registration counter 15 minutes before your scheduled slot for vital sign pre-checks.",
+      desc: "Report to the OPD registration counter 15 minutes before your scheduled slot for vital sign pre-checks and blood pressure baseline.",
     },
   ];
 
   const faqs = [
     {
-      q: "How do I book an OPD consultation serial?",
+      q: "How do I book a consultation with Dr. Shahidul Amin?",
       a: "You can book directly via our online Appointment form or call our chamber reception desk at 016*******. Serials are assigned chronologically to minimize chamber waiting times.",
     },
     {
       q: "What is the follow-up consultation policy?",
-      a: "Follow-up visits within 14 days of an initial consultation are offered at a discounted fee of ৳ 500 for report evaluations and therapy adjustments.",
+      a: "Follow-up visits within 14 days of an initial consultation are offered at a discounted fee of ৳ 500 for investigation evaluations and treatment plan adjustments.",
     },
     {
-      q: "What should I do in case of an acute medical emergency?",
-      a: "If a patient experiences severe chest pain, breathing difficulty, or unconsciousness, proceed directly to our 24/7 Emergency Ward. Emergency triage is conducted immediately on site.",
+      q: "What should I do in case of acute chest pain or cardiac emergency?",
+      a: "If experiencing severe chest pain, radiating pain, breathlessness, or dizziness, proceed immediately to our 24/7 Emergency Ward. Acute coronary triage and stabilization are delivered immediately without waiting.",
     },
   ];
 
@@ -74,10 +75,11 @@ export default function DoctorPage() {
               Clinical Faculty & Governance
             </Badge>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-              Our Doctor & Medical Leadership
+              Our Consultant & Medical Leadership
             </h1>
             <p className="text-base sm:text-lg text-slate-300">
-              Healthcare Hospital is spearheaded by senior Consultant Physician <span className="text-teal-300 font-semibold">{DOCTOR_PROFILE.name}</span> alongside distinguished clinical administrators.
+              Healthcare Hospital is spearheaded by senior Consultant in Cardiovascular and Thoracic Surgery{" "}
+              <span className="text-teal-300 font-semibold">{DOCTOR_PROFILE.name}</span> alongside distinguished clinical administrators.
             </p>
           </div>
         </div>
@@ -162,7 +164,7 @@ export default function DoctorPage() {
                   {DOCTOR_PROFILE.about}
                 </p>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  As the primary consulting physician for Healthcare Hospital, Dr. Hasan specializes in accurate diagnosis, long-term chronic condition care, and coordinated inpatient admission when necessary.
+                  As the primary consultant in cardiovascular and thoracic surgery at Healthcare Hospital, Dr. Shahidul Amin specializes in cardiovascular clinical evaluations, coronary syndrome management, thoracic surgical guidance, and coordinated inpatient admission.
                 </p>
               </div>
 
@@ -193,32 +195,32 @@ export default function DoctorPage() {
               <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-4 shadow-xs">
                 <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
                   <BookOpen className="w-5 h-5 text-teal-600" />
-                  Specialized Medical Conditions Treated
+                  Cardiovascular & Thoracic Conditions Evaluated
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs sm:text-sm text-slate-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
-                    <span>Diabetes & Endocrine Disorders</span>
+                    <span>Coronary Artery Disease & Angina</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
-                    <span>Hypertension & Cardiovascular Risk</span>
+                    <span>Hypertension & Heart Failure Management</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
-                    <span>Respiratory Infections & Asthma</span>
+                    <span>Observation & Workup for Acute Chest Pain</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
-                    <span>Gastrointestinal & Liver Disorders</span>
+                    <span>Thoracic & Vascular Surgical Consultations</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
-                    <span>Infectious Diseases & Fevers</span>
+                    <span>Cardiac Arrhythmias & Holter Analysis</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-teal-600 flex-shrink-0" />
-                    <span>Preventive Health Assessments</span>
+                    <span>Post-Cardiac Procedure Care & Prevention</span>
                   </div>
                 </div>
               </div>

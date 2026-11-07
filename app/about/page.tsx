@@ -21,14 +21,14 @@ import { HOSPITAL_INFO, MANAGEMENT_MEMBERS, DOCTOR_PROFILE } from "@/lib/constan
 export const metadata: Metadata = {
   title: "About Us | Healthcare Hospital Chattogram",
   description:
-    "Learn about Healthcare Hospital Chattogram, our mission, values of Care, Compassion, Excellence, and leadership by Dr. Abdul Karim (MD) and Mr. Anwar Kamal.",
+    "Learn about Healthcare Hospital Chattogram, our mission, cardiovascular care, and leadership by Dr. Abdul Karim (Managing Director) and Mr. Anwar Kamal (Hospital Manager).",
 };
 
 export default function AboutPage() {
   const pillars = [
     {
-      title: "Diagnostic Precision",
-      desc: "Every clinical presentation is evaluated with modern diagnostic discipline and unhurried consultation time.",
+      title: "Cardiovascular Diagnostic Precision",
+      desc: "Every cardiac presentation is evaluated with modern diagnostic discipline, troponin/enzyme checks, and ECG accuracy.",
       icon: Stethoscope,
     },
     {
@@ -42,8 +42,8 @@ export default function AboutPage() {
       icon: Sparkles,
     },
     {
-      title: "24/7 Clinical Continuity",
-      desc: "Seamless coordination between our senior consultant OPD chambers, inpatient ward, and emergency unit.",
+      title: "24/7 Acute Cardiac Care Continuity",
+      desc: "Seamless coordination between our senior consultant OPD chambers, cardiac inpatient ward, and emergency unit.",
       icon: HeartPulse,
     },
   ];
@@ -61,7 +61,7 @@ export default function AboutPage() {
               About Healthcare Hospital
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              Dedicated to compassionate medicine, patient safety, and clinical excellence at {HOSPITAL_INFO.fullAddress}.
+              Dedicated to cardiovascular care, patient safety, and clinical excellence at {HOSPITAL_INFO.fullAddress}.
             </p>
           </div>
         </div>
@@ -77,10 +77,10 @@ export default function AboutPage() {
                 Excellence in Care in a Focused 1-Consultant Hospital
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Healthcare Hospital was founded in Chattogram to bring the disciplined standards, clean protocols, and patient-first ethos of leading tertiary hospitals into a personalized, accessible community facility.
+                Healthcare Hospital was founded in Chattogram to bring the disciplined standards, clean protocols, and patient-first ethos of leading tertiary hospitals into a specialized, accessible cardiac and thoracic facility.
               </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Rather than spreading focus across hundreds of rotating chambers, Healthcare Hospital concentrates on delivering deep, unhurried adult medicine care spearheaded by senior consultant <span className="font-semibold text-slate-900">{DOCTOR_PROFILE.name}</span>, complemented by a 24/7 emergency unit and a dedicated general medicine ward.
+                Rather than spreading focus across hundreds of rotating chambers, Healthcare Hospital concentrates on delivering deep, unhurried cardiovascular care spearheaded by senior consultant <span className="font-semibold text-slate-900">{DOCTOR_PROFILE.name}</span>, complemented by a 24/7 cardiac emergency unit and a dedicated inpatient cardiac ward.
               </p>
 
               <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -88,14 +88,14 @@ export default function AboutPage() {
                   <Target className="w-6 h-6 text-teal-600 mb-2" />
                   <h4 className="font-bold text-slate-900 text-sm">Our Mission</h4>
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                    To deliver accurate diagnosis, transparent clinical communication, and respectful medical treatment to every family in Chattogram.
+                    To deliver accurate cardiovascular diagnosis, transparent clinical communication, and respectful medical treatment to every family in Chattogram.
                   </p>
                 </div>
                 <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200">
                   <Eye className="w-6 h-6 text-teal-600 mb-2" />
                   <h4 className="font-bold text-slate-900 text-sm">Our Vision</h4>
                   <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                    To become the regional benchmark for specialized adult medicine OPD and rapid emergency stabilization.
+                    To become the regional benchmark for specialized cardiovascular OPD, cardiac monitoring, and rapid emergency chest pain stabilization.
                   </p>
                 </div>
               </div>
@@ -110,20 +110,20 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 bg-white rounded-2xl border border-slate-200/80 shadow-xs">
-                  <span className="block text-2xl sm:text-3xl font-extrabold text-teal-700">12+</span>
-                  <span className="text-xs text-slate-600 font-medium mt-1 block">Years Clinical Experience</span>
+                  <span className="block text-2xl sm:text-3xl font-extrabold text-teal-700">Specialist</span>
+                  <span className="text-xs text-slate-600 font-medium mt-1 block">Cardiovascular & Thoracic Surgery</span>
                 </div>
                 <div className="p-4 bg-white rounded-2xl border border-slate-200/80 shadow-xs">
                   <span className="block text-2xl sm:text-3xl font-extrabold text-teal-700">24/7</span>
-                  <span className="text-xs text-slate-600 font-medium mt-1 block">Emergency Ward</span>
+                  <span className="text-xs text-slate-600 font-medium mt-1 block">Chest Pain & Cardiac Emergency</span>
                 </div>
                 <div className="p-4 bg-white rounded-2xl border border-slate-200/80 shadow-xs">
                   <span className="block text-2xl sm:text-3xl font-extrabold text-teal-700">1</span>
-                  <span className="text-xs text-slate-600 font-medium mt-1 block">General Medicine Ward</span>
+                  <span className="text-xs text-slate-600 font-medium mt-1 block">Inpatient Cardiac Ward</span>
                 </div>
                 <div className="p-4 bg-white rounded-2xl border border-slate-200/80 shadow-xs">
                   <span className="block text-2xl sm:text-3xl font-extrabold text-teal-700">1-on-1</span>
-                  <span className="text-xs text-slate-600 font-medium mt-1 block">Dedicated Consultation</span>
+                  <span className="text-xs text-slate-600 font-medium mt-1 block">Dedicated Consultant Care</span>
                 </div>
               </div>
 
@@ -133,7 +133,7 @@ export default function AboutPage() {
                   Clinical Governance Guarantee
                 </p>
                 <p className="text-teal-800 leading-relaxed">
-                  Every prescription is verified against clinical pharmacology guidelines. We maintain continuous sterilization across our wards and consultation chambers.
+                  Every patient plan is audited against cardiovascular safety guidelines. We maintain continuous sterilization across our wards and consultation chambers.
                 </p>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function AboutPage() {
           <div className="text-center mt-12">
             <Button href="/doctor" variant="primary" size="md">
               <Stethoscope className="w-4 h-4" />
-              <span>Meet Our Consultant Doctor (Dr. A.S.M. Rashedul Hasan)</span>
+              <span>Meet Our Consultant ({DOCTOR_PROFILE.name})</span>
             </Button>
           </div>
         </div>

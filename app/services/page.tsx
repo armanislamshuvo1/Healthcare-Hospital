@@ -21,31 +21,31 @@ import { Badge } from "@/components/ui/Badge";
 import { HOSPITAL_INFO, HOSPITAL_SERVICES } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Clinical Services | Consultant OPD, 24/7 Emergency & Inpatient Ward",
+  title: "Clinical Services | Cardiovascular OPD, 24/7 Cardiac Emergency & Inpatient Ward",
   description:
-    "Explore healthcare services at Healthcare Hospital Chattogram: Specialist OPD by Dr. A.S.M. Rashedul Hasan, 24/7 Emergency Ward, and General Medicine Inpatient Care.",
+    "Explore cardiovascular services at Healthcare Hospital Chattogram: Specialist OPD by Dr. Shahidul Amin, 24/7 Cardiac Emergency Ward, and Inpatient Cardiac Care.",
 };
 
 export default function ServicesPage() {
   const facilityHighlights = [
     {
-      title: "Point-of-Care Diagnostic Triage",
-      desc: "Emergency 12-lead ECG, blood glucose checks, and bedside oxygen saturation monitoring.",
+      title: "Point-of-Care Cardiac Diagnostic Triage",
+      desc: "Emergency 12-lead ECG, Troponin/cardiac enzymes testing, and continuous oxygen saturation monitoring.",
       icon: Activity,
     },
     {
-      title: "Respiratory & Oxygen Delivery",
+      title: "Oxygen Therapy & Respiratory Care",
       desc: "Continuous high-flow oxygen supply, advanced nebulization, and aerosol therapy.",
       icon: HeartPulse,
     },
     {
-      title: "Sterile Infusion & Medication",
-      desc: "Precision infusion pumps, emergency crash carts, and pharmacologically audited medications.",
+      title: "Cardiac Monitoring & Infusion",
+      desc: "Precision infusion pumps, emergency resuscitation crash carts, and continuous telemetry monitoring.",
       icon: Syringe,
     },
     {
-      title: "Clean Inpatient Environment",
-      desc: "Daily clinical ward disinfection, isolated observation cubicles, and quiet recovery rooms.",
+      title: "Clean Cardiac Ward Environment",
+      desc: "Daily clinical ward disinfection, isolated cardiac observation cubicles, and quiet recovery rooms.",
       icon: ShieldCheck,
     },
   ];
@@ -63,7 +63,7 @@ export default function ServicesPage() {
               Hospital Services & Facilities
             </h1>
             <p className="text-base sm:text-lg text-slate-300">
-              High-standard clinical departments designed to deliver immediate emergency response and thoughtful specialist outpatient care in Chattogram.
+              High-standard cardiovascular and emergency departments designed to deliver immediate chest pain response and specialist consultation in Chattogram.
             </p>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function ServicesPage() {
       {/* Services List */}
       <section className="py-14 sm:py-18 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          {HOSPITAL_SERVICES.map((service, index) => {
+          {HOSPITAL_SERVICES.map((service) => {
             const isEmergency = service.isEmergency;
             const Icon =
               service.id === "consultant-opd"
@@ -162,8 +162,8 @@ export default function ServicesPage() {
                       </div>
                       <p className="text-[11px] text-slate-500 leading-relaxed">
                         {isEmergency
-                          ? "Walk-ins accepted immediately without appointment. Triage conducted on spot."
-                          : "Advance booking recommended for OPD consultation with Dr. Hasan."}
+                          ? "Walk-ins accepted immediately without appointment. Emergency triage conducted on spot."
+                          : "Advance booking recommended for OPD consultation with Dr. Shahidul Amin."}
                       </p>
                     </div>
 
@@ -227,7 +227,7 @@ export default function ServicesPage() {
               Departmental Facilities & Monitoring Infrastructure
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 mt-2">
-              High-readiness clinical tools supporting Dr. Hasan and our medical duty officers around the clock.
+              High-readiness clinical tools supporting Dr. Shahidul Amin and our medical duty officers around the clock.
             </p>
           </div>
 

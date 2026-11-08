@@ -5,7 +5,7 @@ import { PhoneCall, MessageCircle } from "lucide-react";
 import { HOSPITAL_INFO } from "@/lib/constants";
 
 export function FloatingCallButton() {
-  const whatsappUrl = `https://wa.me/8801600000000?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/8801647574776?text=${encodeURIComponent(
     "Hello Healthcare Hospital, I would like to inquire about consultation serial."
   )}`;
 

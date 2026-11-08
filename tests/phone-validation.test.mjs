@@ -23,10 +23,10 @@ describe("Bangladeshi Phone Validation & Boundary Suite", () => {
       });
     }
 
-    it("validates official hospital contact number 01600000000", () => {
-      const result = validateBangladeshiPhone("01600000000");
+    it("validates official hospital contact number 01647574776", () => {
+      const result = validateBangladeshiPhone("01647574776");
       assert.equal(result.isValid, true);
-      assert.equal(result.normalized, "01600000000");
+      assert.equal(result.normalized, "01647574776");
     });
   });
 

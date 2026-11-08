@@ -35,13 +35,13 @@ describe("Layout & Clinical Content Verification Suite", () => {
       assert.match(constantsContent, /fullAddress:\s*["']K\.B\. Fazlul Kader Rd, Chattogram 4203/);
     });
 
-    it("verifies display phone format matches 016******* pattern", () => {
-      assert.match(constantsContent, /displayPhone:\s*["']016\*{7}["']/);
+    it("verifies display phone format matches 01647574776", () => {
+      assert.match(constantsContent, /displayPhone:\s*["']01647574776["']/);
     });
 
     it("verifies dial phone uses valid Bangladeshi mobile number", () => {
-      assert.match(constantsContent, /dialPhone:\s*["']\+?8801600000000["']/);
-      assert.match(constantsContent, /emergencyDialPhone:\s*["']\+?8801600000000["']/);
+      assert.match(constantsContent, /dialPhone:\s*["']\+?8801647574776["']/);
+      assert.match(constantsContent, /emergencyDialPhone:\s*["']\+?8801647574776["']/);
     });
 
     it("verifies 24/7 emergency readiness is declared", () => {

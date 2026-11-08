@@ -53,7 +53,7 @@ export default function DoctorPage() {
   const faqs = [
     {
       q: "How do I book a consultation with Dr. Shahidul Amin?",
-      a: "You can book directly via our online Appointment form or call our chamber reception desk at 016*******. Serials are assigned chronologically to minimize chamber waiting times.",
+      a: "You can book directly via our online Appointment form or call our chamber reception desk at 01647574776. Serials are assigned chronologically to minimize chamber waiting times.",
     },
     {
       q: "What is the follow-up consultation policy?",

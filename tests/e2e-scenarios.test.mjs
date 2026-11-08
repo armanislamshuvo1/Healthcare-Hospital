@@ -139,7 +139,7 @@ describe("E2E Scenarios & Cross-Feature Integration Suite", () => {
       assert.match(layoutContent, /<FloatingCallButton\s*\/>/);
       assert.match(layoutContent, /<TopUtilityBar\s*\/>/);
 
-      assert.match(constantsContent, /emergencyDialPhone:\s*["']\+?8801600000000["']/);
+      assert.match(constantsContent, /emergencyDialPhone:\s*["']\+?8801647574776["']/);
 
       assert.match(servicesContent, /HOSPITAL_SERVICES\.map/);
       assert.match(constantsContent, /24\/7 Emergency Ward/);

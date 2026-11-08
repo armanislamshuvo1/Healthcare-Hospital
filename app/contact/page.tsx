@@ -12,9 +12,9 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { MapEmbed } from "@/components/contact/MapEmbed";
 
 export const metadata: Metadata = {
-  title: "Contact Us & Directions | 106 E K.B. Fazlul Kader Rd",
+  title: "Contact Us & Directions | K.B. Fazlul Kader Rd",
   description:
-    "Find Healthcare Hospital at 106 E K.B. Fazlul Kader Rd, Chattogram. Reception phone, 24/7 emergency hotline, Google Map directions, and patient inquiry form.",
+    "Find Healthcare Hospital at K.B. Fazlul Kader Rd, Chattogram. Reception phone, 24/7 emergency hotline, Google Map directions, and patient inquiry form.",
 };
 
 export default function ContactPage() {

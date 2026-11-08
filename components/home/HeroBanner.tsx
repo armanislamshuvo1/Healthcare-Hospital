@@ -188,7 +188,7 @@ export function HeroBanner() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-teal-400" />
-                <span>106 E K.B. Fazlul Kader Rd (4203)</span>
+                <span>K.B. Fazlul Kader Rd (4203)</span>
               </div>
             </div>
           </div>

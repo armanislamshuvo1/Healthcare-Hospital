@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
             Healthcare Hospital Privacy Policy
           </h1>
           <p className="text-sm sm:text-base text-slate-300">
-            Last Updated: October 2026 • 106 E K.B. Fazlul Kader Rd, Chattogram 4203
+            Last Updated: October 2026 • K.B. Fazlul Kader Rd, Chattogram 4203
           </p>
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="mt-3 p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-1">
               <p><strong>Healthcare Hospital Reception</strong></p>
-              <p>106 E K.B. Fazlul Kader Rd, Chattogram 4203, Bangladesh</p>
+              <p>K.B. Fazlul Kader Rd, Chattogram 4203, Bangladesh</p>
               <p>Phone: {HOSPITAL_INFO.displayPhone} | Email: {HOSPITAL_INFO.email}</p>
             </div>
           </div>

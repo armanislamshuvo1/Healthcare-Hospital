@@ -3,7 +3,7 @@ import { DoctorProfile, HospitalService, ManagementMember, NavItem, CoreValue, H
 export const HOSPITAL_INFO = {
   name: "Healthcare Hospital",
   locationName: "Chattogram, Bangladesh",
-  fullAddress: "106 E K.B. Fazlul Kader Rd, Chattogram 4203, Bangladesh",
+  fullAddress: "K.B. Fazlul Kader Rd, Chattogram 4203, Bangladesh",
   displayPhone: "016*******",
   dialPhone: "+8801600000000",
   emergencyPhone: "016******* (24/7)",
@@ -180,6 +180,6 @@ export const HOW_TO_VISIT_STEPS = [
   {
     step: 3,
     title: "Visit",
-    desc: "Arrive at 106 E K.B. Fazlul Kader Rd, Chattogram 15 minutes before your slot for consultation.",
+    desc: "Arrive at K.B. Fazlul Kader Rd, Chattogram 15 minutes before your slot for consultation.",
   },
 ];

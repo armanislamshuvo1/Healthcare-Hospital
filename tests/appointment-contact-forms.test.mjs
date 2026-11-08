@@ -103,7 +103,7 @@ describe("Appointment & Contact Forms Specification Suite", () => {
       assert.match(contactContent, /id=["']contactMessage["']/);
     });
 
-    it("contains Google Maps embed iframe pointing to 106 E K.B. Fazlul Kader Rd", () => {
+    it("contains Google Maps embed iframe pointing to K.B. Fazlul Kader Rd", () => {
       assert.match(contactContent, /<iframe[\s\S]*?title=["']Healthcare Hospital Location Map["']/);
       assert.match(contactContent, /src=["'][^"']*Fazlul\+Kader/i);
       assert.match(contactContent, /loading=["']lazy["']/);

@@ -14,7 +14,7 @@ export function MapEmbed() {
         <div className="relative w-full h-72 sm:h-80 bg-slate-200">
           <iframe
             title="Healthcare Hospital Location Map"
-            src="https://maps.google.com/maps?q=106+E+K.B.+Fazlul+Kader+Rd,+Chattogram&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=K.B.+Fazlul+Kader+Rd,+Chattogram&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             className="border-0 w-full h-full"

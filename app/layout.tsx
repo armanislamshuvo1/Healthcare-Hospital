@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: `${HOSPITAL_INFO.name} | Care, Compassion, Excellence in Chattogram`,
   },
   description:
-    "Healthcare Hospital at 106 E K.B. Fazlul Kader Rd, Chattogram 4203. Specialized adult consultation by Dr. A.S.M. Rashedul Hasan, 24/7 Emergency Ward, and Medicine Inpatient Care.",
+    "Healthcare Hospital at K.B. Fazlul Kader Rd, Chattogram 4203. Specialized adult consultation by Dr. A.S.M. Rashedul Hasan, 24/7 Emergency Ward, and Medicine Inpatient Care.",
   keywords: [
     "Healthcare Hospital",
     "Chattogram Hospital",
@@ -54,7 +54,7 @@ export default function RootLayout({
     telephone: HOSPITAL_INFO.dialPhone,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "106 E K.B. Fazlul Kader Rd",
+      streetAddress: "K.B. Fazlul Kader Rd",
       addressLocality: "Chattogram",
       postalCode: "4203",
       addressCountry: "BD",

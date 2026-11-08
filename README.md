@@ -7,7 +7,7 @@
 ## Overview
 
 - **Hospital**: Healthcare Hospital
-- **Location**: 106 E K.B. Fazlul Kader Rd, Chattogram 4203, Bangladesh
+- **Location**: K.B. Fazlul Kader Rd, Chattogram 4203, Bangladesh
 - **Core Values**: Care, Compassion, Excellence
 - **Lead Consultant**: Dr. A.S.M. Rashedul Hasan (MBBS, FCPS Medicine)
 - **Hospital Leadership**: Dr. Abdul Karim (Managing Director), Mr. Anwar Kamal (Hospital Manager)

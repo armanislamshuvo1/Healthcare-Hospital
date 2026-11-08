@@ -261,7 +261,7 @@ export default function ServicesPage() {
             Need Immediate Medical Assistance?
           </h3>
           <p className="text-sm text-slate-300">
-            Our medical officers and emergency triage nursing staff are on duty right now at 106 E K.B. Fazlul Kader Road.
+            Our medical officers and emergency triage nursing staff are on duty right now at K.B. Fazlul Kader Road.
           </p>
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
             <Button

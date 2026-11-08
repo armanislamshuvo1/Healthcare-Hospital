@@ -31,8 +31,8 @@ describe("Layout & Clinical Content Verification Suite", () => {
       assert.match(constantsContent, /name:\s*["']Healthcare Hospital["']/);
     });
 
-    it("verifies hospital address is '106 E K.B. Fazlul Kader Rd, Chattogram 4203, Bangladesh'", () => {
-      assert.match(constantsContent, /fullAddress:\s*["']106 E K\.B\. Fazlul Kader Rd, Chattogram 4203/);
+    it("verifies hospital address is 'K.B. Fazlul Kader Rd, Chattogram 4203, Bangladesh'", () => {
+      assert.match(constantsContent, /fullAddress:\s*["']K\.B\. Fazlul Kader Rd, Chattogram 4203/);
     });
 
     it("verifies display phone format matches 016******* pattern", () => {

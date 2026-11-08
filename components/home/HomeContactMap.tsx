@@ -97,7 +97,7 @@ export function HomeContactMap() {
           <div className="lg:col-span-7 h-80 sm:h-96 rounded-3xl overflow-hidden border border-slate-200 shadow-xs relative bg-slate-100">
             <iframe
               title="Healthcare Hospital Location Map"
-              src="https://maps.google.com/maps?q=106+E+K.B.+Fazlul+Kader+Rd,+Chattogram&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=K.B.+Fazlul+Kader+Rd,+Chattogram&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               className="border-0 w-full h-full"

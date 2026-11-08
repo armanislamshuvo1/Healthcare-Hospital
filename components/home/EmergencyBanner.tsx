@@ -24,7 +24,7 @@ export function EmergencyBanner() {
             </h2>
 
             <p className="text-sm sm:text-base text-red-100 leading-relaxed">
-              Our 24-hour emergency ward at <span className="font-semibold text-white">106 E K.B. Fazlul Kader Road</span> is always open. Immediate resuscitation, oxygen therapy, and emergency physician coverage ready without delays.
+              Our 24-hour emergency ward at <span className="font-semibold text-white">K.B. Fazlul Kader Road</span> is always open. Immediate resuscitation, oxygen therapy, and emergency physician coverage ready without delays.
             </p>
 
             <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-red-100">

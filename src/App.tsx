@@ -27,7 +27,7 @@ const ROUTE_TITLES: Record<string, string> = {
   "/doctor": `Our Doctor & Team | ${DOCTOR_PROFILE.name} (${DOCTOR_PROFILE.degrees.join(", ")})`,
   "/services": "Clinical Services | Cardiovascular OPD, 24/7 Cardiac Emergency & Inpatient Ward",
   "/appointment": `Book Appointment | ${DOCTOR_PROFILE.name} Chamber`,
-  "/contact": "Contact Us & Directions | 106 E K.B. Fazlul Kader Rd",
+  "/contact": "Contact Us & Directions | K.B. Fazlul Kader Rd",
   "/privacy-policy": `Privacy Policy | ${HOSPITAL_INFO.name} Chattogram`,
   "/admin": `Hospital Operations & Staff Desk | ${HOSPITAL_INFO.name}`,
 };

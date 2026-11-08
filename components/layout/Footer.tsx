@@ -182,7 +182,7 @@ export function Footer() {
                 <span>Hospital Map & Location</span>
               </h5>
               <p className="text-xs text-slate-400 leading-relaxed">
-                106 E K.B. Fazlul Kader Rd, Chattogram 4203. Accessible from GEC Circle and Medical College Gate.
+                K.B. Fazlul Kader Rd, Chattogram 4203. Accessible from GEC Circle and Medical College Gate.
               </p>
               <div>
                 <a
@@ -198,7 +198,7 @@ export function Footer() {
             <div className="lg:col-span-7 h-40 sm:h-48 rounded-xl overflow-hidden border border-slate-700 bg-slate-800 shadow-sm">
               <iframe
                 title="Healthcare Hospital Chattogram Map Footer"
-                src="https://maps.google.com/maps?q=106+E+K.B.+Fazlul+Kader+Rd,+Chattogram&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=K.B.+Fazlul+Kader+Rd,+Chattogram&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 className="border-0 w-full h-full"

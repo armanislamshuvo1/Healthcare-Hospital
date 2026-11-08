@@ -186,7 +186,7 @@ export default function DoctorPage() {
                   <MapPin className="w-4 h-4 text-teal-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="font-semibold text-slate-800">Chamber Location: </span>
-                    106 E K.B. Fazlul Kader Rd, Chattogram 4203. Patients are advised to arrive 15 minutes prior to appointment time.
+                    K.B. Fazlul Kader Rd, Chattogram 4203. Patients are advised to arrive 15 minutes prior to appointment time.
                   </div>
                 </div>
               </div>

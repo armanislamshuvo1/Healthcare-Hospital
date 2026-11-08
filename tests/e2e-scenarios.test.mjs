@@ -119,7 +119,7 @@ describe("E2E Scenarios & Cross-Feature Integration Suite", () => {
       assert.match(constantsContent, /title:\s*["']Call["']/);
       assert.match(constantsContent, /title:\s*["']Book["']/);
       assert.match(constantsContent, /title:\s*["']Visit["']/);
-      assert.match(constantsContent, /106 E K\.B\. Fazlul Kader Rd/);
+      assert.match(constantsContent, /K\.B\. Fazlul Kader Rd/);
 
       assert.match(appointmentContent, /Saturday - Thursday/);
       assert.match(appointmentContent, /5:00 PM - 9:00 PM/);
@@ -145,7 +145,7 @@ describe("E2E Scenarios & Cross-Feature Integration Suite", () => {
       assert.match(constantsContent, /24\/7 Emergency Ward/);
       assert.match(constantsContent, /Immediate doctor-led triage/i);
 
-      assert.match(contactContent, /106 E K\.B\. Fazlul Kader Rd, Chattogram/);
+      assert.match(contactContent, /K\.B\. Fazlul Kader Rd, Chattogram/);
     });
 
     it("Scenario 3: Community Inquiry & Hospital Governance Verification", () => {

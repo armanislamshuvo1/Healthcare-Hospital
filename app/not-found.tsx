@@ -92,7 +92,7 @@ export default function NotFound() {
                 <span>Contact Hospital</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </div>
-              <p className="text-xs text-slate-500">106 Fazlul Kader Rd</p>
+              <p className="text-xs text-slate-500">K.B. Fazlul Kader Rd</p>
             </Link>
           </div>
         </div>
